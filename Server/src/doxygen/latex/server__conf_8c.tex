@@ -1,0 +1,82 @@
+\hypertarget{server__conf_8c}{\section{Référence du fichier server\-\_\-conf.\-c}
+\label{server__conf_8c}\index{server\-\_\-conf.\-c@{server\-\_\-conf.\-c}}
+}
+
+
+Fichier contenant 2 fonctions de configurations du serveur.  
+
+
+{\ttfamily \#include $<$string.\-h$>$}\\*
+{\ttfamily \#include $<$sys/types.\-h$>$}\\*
+{\ttfamily \#include $<$sys/socket.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}server\-\_\-conf.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}creuvard.\-h\char`\"{}}\\*
+Graphe des dépendances par inclusion de server\-\_\-conf.\-c\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{server__conf_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{server__conf_8c_aa8f0efe0d1ee33354f41f8898d0ee8dd}{\#define {\bfseries debug}()~fprintf(stderr, \char`\"{}D\-E\-B\-U\-G\-: fonction\-:\%s() file\-:\%s line\-:\%d\textbackslash{}n\char`\"{}, \-\_\-\-\_\-\-F\-U\-N\-C\-T\-I\-O\-N\-\_\-\-\_\-, \-\_\-\-\_\-\-F\-I\-L\-E\-\_\-\-\_\-, \-\_\-\-\_\-\-L\-I\-N\-E\-\_\-\-\_\-);}\label{server__conf_8c_aa8f0efe0d1ee33354f41f8898d0ee8dd}
+
+\end{DoxyCompactItemize}
+\subsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{server__conf_8c_ab7c4ca9e8fb899188488d87cbe8691ea}{initialize\-\_\-server\-\_\-options} (\hyperlink{struct_server_options}{Server\-Options} $\ast$options)
+\begin{DoxyCompactList}\small\item\em Initialise les options du serveur. \end{DoxyCompactList}\item 
+\hypertarget{server__conf_8c_a16545ecc34797329bf6602782882a068}{void {\bfseries Free\-\_\-options} (void)}\label{server__conf_8c_a16545ecc34797329bf6602782882a068}
+
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{server__conf_8c_a4dd19b7d2f1d9097a32e6e523087a598}{\hyperlink{struct_server_options}{Server\-Options} {\bfseries options}}\label{server__conf_8c_a4dd19b7d2f1d9097a32e6e523087a598}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Fichier contenant 2 fonctions de configurations du serveur. \begin{DoxyAuthor}{Auteur}
+Sylvain Bourdou 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\-81 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+25 Février 2013
+\end{DoxyDate}
+Fonction de creuvard 
+
+\subsection{Documentation des fonctions}
+\hypertarget{server__conf_8c_ab7c4ca9e8fb899188488d87cbe8691ea}{\index{server\-\_\-conf.\-c@{server\-\_\-conf.\-c}!initialize\-\_\-server\-\_\-options@{initialize\-\_\-server\-\_\-options}}
+\index{initialize\-\_\-server\-\_\-options@{initialize\-\_\-server\-\_\-options}!server_conf.c@{server\-\_\-conf.\-c}}
+\subsubsection[{initialize\-\_\-server\-\_\-options}]{\setlength{\rightskip}{0pt plus 5cm}void initialize\-\_\-server\-\_\-options (
+\begin{DoxyParamCaption}
+\item[{{\bf Server\-Options} $\ast$}]{options}
+\end{DoxyParamCaption}
+)}}\label{server__conf_8c_ab7c4ca9e8fb899188488d87cbe8691ea}
+
+
+Initialise les options du serveur. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em options} & Struct contenant toutes les variables d'environement. \\
+\hline
+\end{DoxyParams}
+
+
+Voici le graphe des appelants de cette fonction \-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=276pt]{server__conf_8c_ab7c4ca9e8fb899188488d87cbe8691ea_icgraph}
+\end{center}
+\end{figure}
+
+

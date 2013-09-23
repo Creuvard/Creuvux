@@ -1,0 +1,163 @@
+.TH "creuvard.c" 3 "Lundi Février 25 2013" "Creuvuxd" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+creuvard.c \- 
+.PP
+Fonction interne\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <stdio\&.h>\fP
+.br
+\fC#include <stdlib\&.h>\fP
+.br
+\fC#include <string\&.h>\fP
+.br
+\fC#include <unistd\&.h>\fP
+.br
+\fC#include <errno\&.h>\fP
+.br
+\fC#include <fcntl\&.h>\fP
+.br
+\fC#include <pwd\&.h>\fP
+.br
+\fC#include <sys/types\&.h>\fP
+.br
+\fC#include <sys/stat\&.h>\fP
+.br
+\fC#include <sys/socket\&.h>\fP
+.br
+\fC#include <netinet/in\&.h>\fP
+.br
+\fC#include <arpa/inet\&.h>\fP
+.br
+\fC#include <sys/time\&.h>\fP
+.br
+\fC#include <sys/wait\&.h>\fP
+.br
+\fC#include 'creuvard\&.h'\fP
+.br
+\fC#include <openssl/sha\&.h>\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBdebug\fP()   fprintf(stderr, 'DEBUG: fonction:%s() file:%s line:%d\\n', __FUNCTION__, __FILE__, __LINE__);"
+.br
+.ti -1c
+.RI "#define \fBBUFSIZE\fP   1024*16"
+.br
+.in -1c
+.SS "Fonctions"
+
+.in +1c
+.ti -1c
+.RI "char * \fBcrv_strdup\fP (const char *s)"
+.br
+.ti -1c
+.RI "void * \fBcrv_malloc\fP (size_t size)"
+.br
+.ti -1c
+.RI "void \fBcrv_free\fP (void *ptr)"
+.br
+.ti -1c
+.RI "void * \fBcrv_calloc\fP (size_t nmemb, size_t size)"
+.br
+.ti -1c
+.RI "void \fBcrv_sanitise_stdfd\fP (void)"
+.br
+.RI "\fIFerme les descripteur de fichier\&. \fP"
+.ti -1c
+.RI "FILE * \fBcrv_fopen\fP (const char *file, const char *mode)"
+.br
+.ti -1c
+.RI "char ** \fBcrv_cut\fP (const char *str, const char *separator)"
+.br
+.ti -1c
+.RI "int \fBcrv_chdir\fP (const char *path)"
+.br
+.ti -1c
+.RI "int \fBcrv_drop_priv_temp\fP (const char *username)"
+.br
+.ti -1c
+.RI "int \fBcrv_restore_priv\fP (void)"
+.br
+.ti -1c
+.RI "off_t \fBcrv_filesize\fP (const char *file)"
+.br
+.ti -1c
+.RI "char * \fBcrv_file_type\fP (const char *file)"
+.br
+.ti -1c
+.RI "int \fBcrv_server_listen\fP (int port, int nb_pers, const char *addr, int addr_family, int block)"
+.br
+.ti -1c
+.RI "int \fBcrv_set_nonblock\fP (int fd)"
+.br
+.ti -1c
+.RI "int \fBcrv_unset_nonblock\fP (int fd)"
+.br
+.ti -1c
+.RI "void \fBcrv_daemon_mode\fP (void)"
+.br
+.ti -1c
+.RI "void \fBcrv_sigchld_handler\fP (int sig)"
+.br
+.ti -1c
+.RI "int \fBcrv_chroot\fP (const char *directory)"
+.br
+.ti -1c
+.RI "int \fBcrv_drop_priv_perm_and_chroot\fP (const char *username, const char *directory)"
+.br
+.ti -1c
+.RI "size_t \fBcrv_strncpy\fP (char *dst, const char *src, size_t siz)"
+.br
+.ti -1c
+.RI "size_t \fBcrv_strncat\fP (char *dst, const char *src, size_t siz)"
+.br
+.ti -1c
+.RI "off_t \fBcrv_du\fP (const char *file)"
+.br
+.ti -1c
+.RI "char * \fBcrv_sha1\fP (const char *filename)"
+.br
+.ti -1c
+.RI "char * \fBcrv_mkstemp\fP (const char *prefix, const char *directory)"
+.br
+.ti -1c
+.RI "int \fBcrv_strncmp\fP (const char *s1, const char *s2)"
+.br
+.ti -1c
+.RI "char * \fBcrv_real_name\fP (const char *filename)"
+.br
+.ti -1c
+.RI "char * \fBcrv_last_dirname\fP (const char *path)"
+.br
+.in -1c
+.SH "Description détaillée"
+.PP 
+Fonction interne\&. 
+
+\fBAuteur:\fP
+.RS 4
+Sylvain Bourdou 
+.RE
+.PP
+\fBVersion:\fP
+.RS 4
+0\&.81 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+25 Février 2013
+.RE
+.PP
+Fonction de creuvard 
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Creuvuxd à partir du code source\&.

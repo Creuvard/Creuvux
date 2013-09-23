@@ -1,0 +1,270 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+Add_Comment	put.c	/^int Add_Comment(const char *filename, const char *username)$/;"	f
+BUFSIZE	creuvard.c	806;"	d	file:
+CADIR	network.c	318;"	d	file:
+CAFILE	network.c	317;"	d	file:
+CERTFILE	network.c	319;"	d	file:
+CIPHER_LIST	network.c	316;"	d	file:
+CREATE_DATABASE_H	create_database.h	8;"	d
+CREUVARD_H	creuvard.h	8;"	d
+CREUVUX_STAT_H	creuvux_stat.h	8;"	d
+CREUVUX_VERSION	help.h	13;"	d
+CRV_MYSQL_H	crv_mysql.h	9;"	d
+CRV_STRING_H	crv_string.h	8;"	d
+Command_options	network.h	/^} Command_options;$/;"	t	typeref:struct:__anon1
+Free_cmd_struct	network.c	/^Free_cmd_struct(void)$/;"	f	file:
+Free_options	server_conf.c	/^void Free_options(void)$/;"	f
+GET_H	get.h	8;"	d
+Get	get.c	/^int Get(SSL *ssl, const char *filename, off_t begin, off_t end, const char *path)$/;"	f
+Gstat	creuvux_stat.c	/^} Gstat;$/;"	t	typeref:struct:__anon3	file:
+HELP_H	help.h	9;"	d
+IP_SIZE	log.h	12;"	d
+LOG_H	log.h	8;"	d
+LOG_MESSAGE_LENGTH	log.h	11;"	d
+Log	log.c	/^Log (const char *log_level, int chroot_flag, const char *fmt, ...)$/;"	f
+MAX_LISTEN_SOCKETS	network.c	64;"	d	file:
+NETWORK_H	network.h	7;"	d
+Old_Sha1	put.c	/^static char *Old_Sha1;$/;"	v	file:
+PUT_H	put.h	8;"	d
+Put_cb_Blob_Data	put.c	/^static int Put_cb_Blob_Data (void *db, int argc, char **argv, char **azColName){$/;"	f	file:
+Put_cb_Cat	put.c	/^static int Put_cb_Cat(void *db, int argc, char **argv, char **azColName){$/;"	f	file:
+Put_cb_Descr	put.c	/^static int Put_cb_Descr (void *db, int argc, char **argv, char **azColName){$/;"	f	file:
+Put_cb_Files	put.c	/^static int Put_cb_Files(void *db, int argc, char **argv, char **azColName){$/;"	f	file:
+Put_cb_Grp_Sha1	put.c	/^static int Put_cb_Grp_Sha1 (void *db, int argc, char **argv, char **azColName){$/;"	f	file:
+Put_cb_Grp_User	put.c	/^static int Put_cb_Grp_User (void *db, int argc, char **argv, char **azColName){$/;"	f	file:
+Repport	creuvux_stat.c	/^Repport(void )$/;"	f
+SERVER_CONF	server_conf.h	8;"	d
+SIZE	creuvard.h	12;"	d
+SSL_LOADFILE_H	SSL_loadfile.h	7;"	d
+SSL_SENDFILE_H	SSL_sendfile.h	7;"	d
+SSL_loadfile	SSL_loadfile.c	/^int SSL_loadfile(SSL *ssl, const char *filename)$/;"	f
+SSL_sendfile	SSL_sendfile.c	/^SSL_sendfile(SSL *ssl, const char *filename, off_t begin, off_t end)$/;"	f
+STRING_BLOCK_SIZE	crv_mysql.c	19;"	d	file:
+STRING_BLOCK_SIZE	crv_string.c	18;"	d	file:
+SYNC_H	sync.h	8;"	d
+ServerOptions	server_conf.h	/^} ServerOptions;$/;"	t	typeref:struct:__anon2
+Stat	creuvux_stat.c	/^Stat ( double size)$/;"	f
+Sync	sync.c	/^int Sync(SSL *ssl)$/;"	f
+Sync_cb_Cat	sync.c	/^static int Sync_cb_Cat(void *db, int argc, char **argv, char **azColName){$/;"	f	file:
+Sync_cb_Descr	sync.c	/^static int Sync_cb_Descr (void *db, int argc, char **argv, char **azColName){$/;"	f	file:
+Sync_cb_Files	sync.c	/^static int Sync_cb_Files(void *db, int argc, char **argv, char **azColName){$/;"	f	file:
+Sync_cb_Grp_Sha1	sync.c	/^static int Sync_cb_Grp_Sha1 (void *db, int argc, char **argv, char **azColName){$/;"	f	file:
+Sync_cb_Server	sync.c	/^static int Sync_cb_Server (void *db, int argc, char **argv, char **azColName){$/;"	f	file:
+Title	put.c	/^static char *Title;$/;"	v	file:
+UPDATE_DATABASE_H	update_database.h	8;"	d
+Ustat	creuvux_stat.c	/^} Ustat;$/;"	t	typeref:struct:__anon4	file:
+_BSD_SOURCE	log.c	7;"	d	file:
+action_file	create_database.c	/^action_file (char *root, const char *file, sqlite3 *db) $/;"	f	file:
+addr	network.h	/^  char	*addr;		\/* Client's address *\/$/;"	m	struct:__anon1
+address_family	server_conf.h	/^  int				  address_family;		\/* Address family used by the server. *\/$/;"	m	struct:__anon2
+bandwidth	server_conf.h	/^  int				  bandwidth;			\/* Maximum data transfer rate permitted, in KBps. *\/$/;"	m	struct:__anon2
+begin	network.h	/^  off_t	begin;		\/* octet whereis file begin *\/$/;"	m	struct:__anon1
+cb_sax_cdata	creuvux_stat.c	/^cb_sax_cdata (void *user_data, const xmlChar * ch, int len)$/;"	f	file:
+cb_sax_characters	creuvux_stat.c	/^cb_sax_characters (void *user_data, const xmlChar * ch, int len)$/;"	f	file:
+cb_sax_comment	creuvux_stat.c	/^static void cb_sax_comment (void *user_data, const xmlChar * ch)$/;"	f	file:
+cb_sax_end_document	creuvux_stat.c	/^cb_sax_end_document( void *user_data)$/;"	f	file:
+cb_sax_end_element	creuvux_stat.c	/^cb_sax_end_element(void *user_data, const xmlChar * name)$/;"	f	file:
+cb_sax_error	creuvux_stat.c	/^cb_sax_error(void *user_data, const char *msg, ...)$/;"	f	file:
+cb_sax_fatal_error	creuvux_stat.c	/^cb_sax_fatal_error(void *user_data, const char *msg, ...)$/;"	f	file:
+cb_sax_get_entity	creuvux_stat.c	/^cb_sax_get_entity ( void *user_data, const xmlChar *name)$/;"	f	file:
+cb_sax_start_document	creuvux_stat.c	/^cb_sax_start_document( void *user_data)$/;"	f	file:
+cb_sax_start_element	creuvux_stat.c	/^cb_sax_start_element(void *user_data, const xmlChar * name, const xmlChar ** attributes)$/;"	f	file:
+cb_sax_warning	creuvux_stat.c	/^cb_sax_warning (void *user_data, const char *msg, ...)$/;"	f	file:
+check_env	creuvuxd.c	/^check_env(char *chroot_dir)$/;"	f	file:
+check_file_cb	update_database.c	/^int check_file_cb (void *NotUsed, int argc, char **argv, char **azColName){$/;"	f
+check_file_exist	update_database.c	/^int check_file_exist(const char *file, sqlite3 *db)$/;"	f
+check_path_cb	update_database.c	/^int check_path_cb (void *NotUsed, int argc, char **argv, char **azColName){$/;"	f
+check_same_path	update_database.c	/^int check_same_path(const char *file, const char *path, sqlite3 *db)$/;"	f
+chroot_directory	server_conf.h	/^  char				  *chroot_directory;	\/* Chroot directory *\/$/;"	m	struct:__anon2
+close_listen_socks	network.c	/^close_listen_socks(void)$/;"	f	file:
+cmd_ok	creuvux_stat.c	/^int cmd_ok;$/;"	v
+command	creuvux_stat.c	/^Command_options command;$/;"	v
+command	log.c	/^Command_options command;$/;"	v
+command	network.c	/^Command_options command;$/;"	v
+command	sync.c	/^Command_options command;$/;"	v
+comment	network.h	/^	char	*comment;		\/* Use for create about file*\/$/;"	m	struct:__anon1
+comment_flag	creuvux_stat.c	/^int comment_flag;$/;"	v
+config	server_conf.h	/^  char				  *config;				\/* Configuration file*\/$/;"	m	struct:__anon2
+create_xml_filegen	creuvux_stat.c	/^int create_xml_filegen(void)$/;"	f	file:
+crv_calloc	creuvard.c	/^crv_calloc(size_t nmemb, size_t size)$/;"	f
+crv_chdir	creuvard.c	/^crv_chdir (const char *path)$/;"	f
+crv_chroot	creuvard.c	/^int crv_chroot ( const char *directory)$/;"	f
+crv_cut	creuvard.c	/^crv_cut (const char *str, const char *separator)$/;"	f
+crv_daemon_mode	creuvard.c	/^crv_daemon_mode (void)$/;"	f
+crv_drop_priv_perm_and_chroot	creuvard.c	/^int crv_drop_priv_perm_and_chroot(const char *username, const char *directory)$/;"	f
+crv_drop_priv_temp	creuvard.c	/^int crv_drop_priv_temp (const char *username)$/;"	f
+crv_du	creuvard.c	/^crv_du (const char *file)$/;"	f
+crv_file_type	creuvard.c	/^char *crv_file_type( const char *file)$/;"	f
+crv_filesize	creuvard.c	/^crv_filesize (const char *file)$/;"	f
+crv_fopen	creuvard.c	/^FILE *crv_fopen(const char *file, const char *mode)$/;"	f
+crv_free	creuvard.c	/^crv_free(void *ptr)$/;"	f
+crv_last_dirname	creuvard.c	/^char *crv_last_dirname(const char *path)$/;"	f
+crv_malloc	creuvard.c	/^void *crv_malloc (size_t size)$/;"	f
+crv_mkstemp	creuvard.c	/^char *crv_mkstemp(const char *prefix, const char *directory)$/;"	f
+crv_mysql	create_database.c	/^MYSQL *crv_mysql;$/;"	v
+crv_mysql_create_host_table	crv_mysql.c	/^int crv_mysql_create_host_table(MYSQL *sql, const char *host)$/;"	f
+crv_mysql_create_host_table_cat	crv_mysql.c	/^int crv_mysql_create_host_table_cat(MYSQL *sql, const char *host)$/;"	f
+crv_mysql_create_host_table_grp	crv_mysql.c	/^int crv_mysql_create_host_table_grp(MYSQL *sql, const char *host)$/;"	f
+crv_mysql_create_host_table_info	crv_mysql.c	/^int crv_mysql_create_host_table_info(MYSQL *sql, const char *host)$/;"	f
+crv_mysql_insert_host_table_cat	crv_mysql.c	/^int crv_mysql_insert_host_table_cat(MYSQL *sql, const char *host, const char *sha1, const char *cat)$/;"	f
+crv_mysql_insert_host_table_file	crv_mysql.c	/^int crv_mysql_insert_host_table_file(MYSQL *sql, const char *host, const char *sha1, const char *size, const char *filename)$/;"	f
+crv_mysql_insert_host_table_grp	crv_mysql.c	/^int crv_mysql_insert_host_table_grp(MYSQL *sql, const char *host, const char *sha1)$/;"	f
+crv_mysql_insert_host_table_info	crv_mysql.c	/^int crv_mysql_insert_host_table_info(MYSQL *sql, const char *host, int bandwidth, int ports)$/;"	f
+crv_mysql_truncate_host_tables	crv_mysql.c	/^int crv_mysql_truncate_host_tables(MYSQL *sql, const char *host)$/;"	f
+crv_real_name	creuvard.c	/^crv_real_name(const char *filename)$/;"	f
+crv_restore_priv	creuvard.c	/^int crv_restore_priv(void)$/;"	f
+crv_sanitise_stdfd	creuvard.c	/^crv_sanitise_stdfd(void)$/;"	f
+crv_server_listen	creuvard.c	/^int crv_server_listen(int port, int nb_pers, const char *addr, int addr_family, int block)$/;"	f
+crv_set_nonblock	creuvard.c	/^crv_set_nonblock(int fd)$/;"	f
+crv_sha1	creuvard.c	/^crv_sha1(const char *filename)$/;"	f
+crv_sigchld_handler	creuvard.c	/^crv_sigchld_handler( int sig)$/;"	f
+crv_strdup	creuvard.c	/^char *crv_strdup (const char * s)$/;"	f
+crv_strncat	creuvard.c	/^crv_strncat(char *dst, const char *src, size_t siz)$/;"	f
+crv_strncmp	creuvard.c	/^int crv_strncmp(const char *s1, const char *s2)$/;"	f
+crv_strncpy	creuvard.c	/^crv_strncpy(char *dst, const char *src, size_t siz)$/;"	f
+crv_unset_nonblock	creuvard.c	/^crv_unset_nonblock(int fd)$/;"	f
+ctr_c	network.c	/^void ctr_c(int signum)$/;"	f	file:
+db_max	server_conf.h	/^  off_t				  db_max; 	\/* Max size of file for db entry *\/$/;"	m	struct:__anon2
+db_min	server_conf.h	/^  off_t 			  db_min; 	\/* Min size of file for db entry *\/  $/;"	m	struct:__anon2
+debug	SSL_loadfile.c	30;"	d	file:
+debug	SSL_sendfile.c	21;"	d	file:
+debug	create_database.c	34;"	d	file:
+debug	creuvard.c	27;"	d	file:
+debug	crv_mysql.c	18;"	d	file:
+debug	get.c	50;"	d	file:
+debug	network.c	53;"	d	file:
+debug	put.c	33;"	d	file:
+debug	server_conf.c	13;"	d	file:
+debug	server_conf.h	/^  int				  debug;				\/* Run with on debug mode. *\/$/;"	m	struct:__anon2
+debug	sync.c	50;"	d	file:
+debug	update_database.c	23;"	d	file:
+delta_get	creuvux_stat.c	/^	off_t delta_get;$/;"	m	struct:__anon4	file:
+delta_put	creuvux_stat.c	/^	off_t delta_put;$/;"	m	struct:__anon4	file:
+delta_sync	creuvux_stat.c	/^	off_t delta_sync;$/;"	m	struct:__anon4	file:
+dh1024	network.c	/^DH *dh1024 = NULL;$/;"	v
+dh512	network.c	/^DH *dh512 = NULL;$/;"	v
+end	network.h	/^  off_t	end;		\/* octet where file terminate *\/$/;"	m	struct:__anon1
+fd	creuvux_stat.c	/^	FILE *fd;$/;"	m	struct:__anon3	file:
+file_flag	update_database.c	/^static int file_flag;$/;"	v	file:
+filename	network.h	/^  char	*filename;	\/* Filename to download *\/$/;"	m	struct:__anon1
+flag	network.h	/^  int	flag;		\/* Allowed to continue *\/$/;"	m	struct:__anon1
+genre	network.h	/^	char	*genre;			\/* Use for create about file*\/$/;"	m	struct:__anon1
+genrepport	creuvux_stat.c	/^genrepport (const char *user_data)$/;"	f	file:
+get_cat_and_change_directory	update_database.c	/^int get_cat_and_change_directory(const char *file, sqlite3 *db, const char *upload_dir)$/;"	f
+get_flag	creuvux_stat.c	/^int get_flag;$/;"	v
+get_passwd	creuvuxd.c	/^get_passwd (void)$/;"	f	file:
+grp	network.h	/^  char	*grp;		\/* Groups of user *\/$/;"	m	struct:__anon1
+gstat	creuvux_stat.c	/^Gstat gstat;$/;"	v
+handle_error	network.c	/^handle_error (const char *file, int lineno, const char *msg)$/;"	f	file:
+host	server_conf.h	/^  char				  *host;				\/* Assign FQDN for listing.xml *\/$/;"	m	struct:__anon2
+id	creuvux_stat.c	/^	int id;$/;"	m	struct:__anon4	file:
+id	creuvux_stat.c	/^int id;$/;"	v
+init_OpenSSL	network.c	/^init_OpenSSL (void)$/;"	f	file:
+init_dhparams	network.c	/^init_dhparams (void)$/;"	f	file:
+initialize_Gstat	creuvux_stat.c	/^void initialize_Gstat ( Gstat *gstat)$/;"	f	file:
+initialize_command_opt	network.c	/^initialize_command_opt(Command_options *command)$/;"	f
+initialize_server_options	server_conf.c	/^void initialize_server_options ( ServerOptions *options)$/;"	f
+int_error	log.h	13;"	d
+is_dir	create_database.c	/^  int is_dir;$/;"	m	struct:slist_t	file:
+len	crv_string.c	/^  int len;                      \/* Longueur de la chaîne *\/$/;"	m	struct:__anon6	file:
+len	crv_string.h	/^  int len;                      \/* Longueur de la chaîne *\/$/;"	m	struct:__anon5
+list_directory_and_create_db	create_database.c	/^int list_directory_and_create_db(const char *dir, sqlite3 *db)$/;"	f
+listen_addrs	server_conf.h	/^  char				  *listen_addrs;		\/* Assign an address to listen. *\/$/;"	m	struct:__anon2
+listen_socks	network.c	/^int listen_socks[MAX_LISTEN_SOCKETS];$/;"	v
+lst_file	network.h	/^  char	*lst_file;	\/* Filename username.xsl *\/$/;"	m	struct:__anon1
+mail	network.h	/^  char	*mail;		\/* Username mail *\/$/;"	m	struct:__anon1
+main	creuvuxd.c	/^int main (int argc, char **argv)$/;"	f
+my_sql_connect	crv_mysql.c	/^MYSQL * my_sql_connect(const char *server, const char *dbname, const char *user, const char *passwd)$/;"	f
+name	create_database.c	/^  char *name;$/;"	m	struct:slist_t	file:
+name	network.h	/^  char	*name;		\/* SYNC, GET, PUT ... *\/$/;"	m	struct:__anon1
+nb_comment	creuvux_stat.c	/^	int nb_comment;$/;"	m	struct:__anon3	file:
+nb_comment	creuvux_stat.c	/^	int nb_comment;$/;"	m	struct:__anon4	file:
+nb_file	create_database.c	/^int nb_file;$/;"	v
+nb_get	creuvux_stat.c	/^	int nb_get;$/;"	m	struct:__anon3	file:
+nb_get	creuvux_stat.c	/^	int nb_get;$/;"	m	struct:__anon4	file:
+nb_put	creuvux_stat.c	/^	int nb_put;$/;"	m	struct:__anon3	file:
+nb_put	creuvux_stat.c	/^	int nb_put;$/;"	m	struct:__anon4	file:
+nb_sync	creuvux_stat.c	/^	int nb_sync;$/;"	m	struct:__anon3	file:
+nb_sync	creuvux_stat.c	/^	int nb_sync;$/;"	m	struct:__anon4	file:
+nb_tot	creuvux_stat.c	/^	int nb_tot;$/;"	m	struct:__anon3	file:
+nb_tot	creuvux_stat.c	/^	int nb_tot;$/;"	m	struct:__anon4	file:
+next	create_database.c	/^  struct slist *next;$/;"	m	struct:slist_t	typeref:struct:slist_t::slist	file:
+num_listen_socks	network.c	/^int num_listen_socks = 0;$/;"	v
+num_ports	server_conf.h	/^  int				  num_ports;			\/* Assign a port to listen. *\/$/;"	m	struct:__anon2
+num_user	creuvux_stat.c	/^int num_user;$/;"	v
+old_sha1	network.h	/^  char	*old_sha1;	\/* Use for rename sha1 in real filename COMMENt|MSG *\/$/;"	m	struct:__anon1
+options	create_database.c	/^ServerOptions options;$/;"	v
+options	creuvux_stat.c	/^ServerOptions options;$/;"	v
+options	creuvuxd.c	/^ServerOptions options;$/;"	v
+options	log.c	/^ServerOptions options;$/;"	v
+options	server_conf.c	/^ServerOptions options;$/;"	v
+passphrase	server_conf.h	/^  char				  *passphrase;			\/* Passphrase. *\/$/;"	m	struct:__anon2
+passwd_cb	network.c	/^passwd_cb (char *buf, int size, int rwflag, void *passwd)$/;"	f	file:
+path	network.h	/^  char	*path;		\/* Path of file *\/$/;"	m	struct:__anon1
+path	server_conf.h	/^  char				  *path;				\/* Configurations files path (groups.xml, creuvuxd.conf, rootcert.pem, server.pem ).*\/$/;"	m	struct:__anon2
+path_flag	update_database.c	/^static int path_flag;$/;"	v	file:
+pid	server_conf.h	/^  char				  *pid;					\/* Name of pid file. *\/$/;"	m	struct:__anon2
+pos_file	create_database.c	/^int pos_file;$/;"	v
+post_connection_check	network.c	/^post_connection_check (SSL * ssl, char *host)$/;"	f	file:
+pre_Get	get.c	/^int pre_Get(char **c)$/;"	f
+pre_Get_cb	get.c	/^static int pre_Get_cb (void *db, int argc, char **argv, char **azColName){$/;"	f	file:
+pre_Sync	sync.c	/^void pre_Sync(void)$/;"	f
+pre_authcon	network.c	/^pre_authcon(SSL *ssl, const char *xpath)$/;"	f	file:
+priv_uid	creuvard.c	/^static uid_t priv_uid;$/;"	v	file:
+pseudo	creuvux_stat.c	/^	char *pseudo;$/;"	m	struct:__anon4	file:
+pseudo_client	put.c	/^static char *pseudo_client;$/;"	v	file:
+public_directory	server_conf.h	/^  char				  *public_directory;	\/* Directory where files are read by anonymous connexion. *\/$/;"	m	struct:__anon2
+put_flag	creuvux_stat.c	/^int put_flag;$/;"	v
+read_server_conf	creuvuxd.c	/^read_server_conf(const char *filename)$/;"	f	file:
+received_sigterm	network.c	/^static volatile sig_atomic_t received_sigterm = 0;$/;"	v	file:
+recup_email	network.c	/^recup_email (SSL * ssl)$/;"	f
+recup_pseudo	network.c	/^recup_pseudo (SSL * ssl)$/;"	f
+recursive_compt_dir	create_database.c	/^recursive_compt_dir (char *root, char *dirname)$/;"	f	file:
+recursive_dir	create_database.c	/^recursive_dir (char *root, char *dirname, sqlite3 *db)$/;"	f	file:
+sec	server_conf.h	/^  int				  sec;					\/* Security level. *\/$/;"	m	struct:__anon2
+seed_prng	network.c	/^seed_prng (void)$/;"	f	file:
+server_accept_loop	network.c	/^server_accept_loop()$/;"	f
+setup_server_ctx	network.c	/^setup_server_ctx (void)$/;"	f	file:
+sha1	network.h	/^  char	*sha1;		\/* sha1 use with GET and PUT command *\/$/;"	m	struct:__anon1
+sha1	update_database.c	/^static char *sha1;$/;"	v	file:
+sigterm_handler	network.c	/^sigterm_handler(int sig)$/;"	f	file:
+size	crv_string.c	/^  int size;                     \/* Taille de l'espace alloué *\/$/;"	m	struct:__anon6	file:
+size	crv_string.h	/^  int size;                     \/* Taille de l'espace alloué *\/$/;"	m	struct:__anon5
+size_comment	creuvux_stat.c	/^	off_t size_comment;$/;"	m	struct:__anon3	file:
+size_comment	creuvux_stat.c	/^	off_t size_comment;$/;"	m	struct:__anon4	file:
+size_get	creuvux_stat.c	/^	off_t size_get;$/;"	m	struct:__anon3	file:
+size_get	creuvux_stat.c	/^	off_t size_get;$/;"	m	struct:__anon4	file:
+size_ok	creuvux_stat.c	/^int size_ok;$/;"	v
+size_put	creuvux_stat.c	/^	off_t size_put;$/;"	m	struct:__anon3	file:
+size_put	creuvux_stat.c	/^	off_t size_put;$/;"	m	struct:__anon4	file:
+size_tot	creuvux_stat.c	/^	off_t size_tot;$/;"	m	struct:__anon3	file:
+size_tot	creuvux_stat.c	/^	off_t size_tot;$/;"	m	struct:__anon4	file:
+slist_t	create_database.c	/^typedef struct slist_t$/;"	s	file:
+slist_t	create_database.c	/^} slist_t;$/;"	t	typeref:struct:slist_t	file:
+stat_repport	server_conf.h	/^  char				  *stat_repport;		\/* Filename of HTML repport *\/$/;"	m	struct:__anon2
+str	crv_string.c	/^  char *str;                    \/* chaîne *\/$/;"	m	struct:__anon6	file:
+str	crv_string.h	/^  char *str;                    \/* chaîne *\/$/;"	m	struct:__anon5
+string_ajout	crv_string.c	/^string_ajout (string_t * str, const char *str2)$/;"	f
+string_free	crv_string.c	/^string_free (string_t * str)$/;"	f
+string_my_escape	crv_mysql.c	/^string_my_escape (MYSQL * myh, string_t * str, const char *str2)$/;"	f
+string_new	crv_string.c	/^string_t * string_new (void)$/;"	f
+string_new_initial_len	crv_string.c	/^string_t * string_new_initial_len (void)$/;"	f
+string_t	crv_string.c	/^} string_t;$/;"	t	typeref:struct:__anon6	file:
+string_t	crv_string.h	/^} string_t;$/;"	t	typeref:struct:__anon5
+sync_flag	creuvux_stat.c	/^int sync_flag;$/;"	v
+tmp_dh_callback	network.c	/^tmp_dh_callback (SSL * ssl, int is_export, int keylength)$/;"	f	file:
+traitement_conec	network.c	/^traitement_conec (SSL * ssl)$/;"	f	file:
+tv1	network.c	/^struct timeval tv1, tv2;$/;"	v	typeref:struct:timeval
+tv2	network.c	/^struct timeval tv1, tv2;$/;"	v	typeref:struct:
+upload_directory	server_conf.h	/^  char				  *upload_directory;	\/* Upload directory. *\/$/;"	m	struct:__anon2
+usage	creuvuxd.c	/^usage (const char *str)$/;"	f	file:
+user	network.h	/^  char	*user;		\/* Client's username *\/$/;"	m	struct:__anon1
+user	server_conf.h	/^  char				  *user;				\/* Name user which users are mapped to. *\/$/;"	m	struct:__anon2
+ustat	creuvux_stat.c	/^Ustat ustat[SIZE];$/;"	v
+verify_callback	network.c	/^verify_callback (int ok, X509_STORE_CTX * store)$/;"	f	file:
+version	network.h	/^  char	*version;	\/* Client's version *\/$/;"	m	struct:__anon1

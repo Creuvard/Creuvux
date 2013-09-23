@@ -1,0 +1,192 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.3.1"/>
+<title>Creuvux: Référence du fichier creuvuxd.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Creuvux
+   </div>
+   <div id="projectbrief">Private file sharing</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.3.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="annotated.html"><span>Structures&#160;de&#160;données</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Variables&#160;globale</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Structures de données</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Fonctions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
+  <div class="headertitle">
+<div class="title">Référence du fichier creuvuxd.c</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Fichier principale.  
+<a href="#details">Plus de détails...</a></p>
+<div class="textblock"><code>#include &lt;stdlib.h&gt;</code><br/>
+<code>#include &lt;string.h&gt;</code><br/>
+<code>#include &lt;unistd.h&gt;</code><br/>
+<code>#include &lt;limits.h&gt;</code><br/>
+<code>#include &lt;errno.h&gt;</code><br/>
+<code>#include &lt;pwd.h&gt;</code><br/>
+<code>#include &lt;fcntl.h&gt;</code><br/>
+<code>#include &lt;termios.h&gt;</code><br/>
+<code>#include &lt;sys/types.h&gt;</code><br/>
+<code>#include &lt;sys/socket.h&gt;</code><br/>
+<code>#include &lt;sys/stat.h&gt;</code><br/>
+<code>#include &lt;sys/wait.h&gt;</code><br/>
+<code>#include &lt;netinet/in.h&gt;</code><br/>
+<code>#include &lt;arpa/inet.h&gt;</code><br/>
+<code>#include &lt;sqlite3.h&gt;</code><br/>
+<code>#include &quot;creuvard.h&quot;</code><br/>
+<code>#include &quot;server_conf.h&quot;</code><br/>
+<code>#include &quot;help.h&quot;</code><br/>
+<code>#include &quot;network.h&quot;</code><br/>
+<code>#include &quot;create_database.h&quot;</code><br/>
+</div><div class="textblock"><div class="dynheader">
+Graphe des dépendances par inclusion de creuvuxd.c:</div>
+<div class="dyncontent">
+<div class="center"><img src="creuvuxd_8c__incl.png" border="0" usemap="#creuvuxd_8c" alt=""/></div>
+<map name="creuvuxd_8c" id="creuvuxd_8c">
+<area shape="rect" id="node33" href="creuvard_8h_source.html" title="creuvard.h" alt="" coords="1713,80,1795,107"/><area shape="rect" id="node37" href="server__conf_8h_source.html" title="server_conf.h" alt="" coords="1588,80,1689,107"/><area shape="rect" id="node39" href="help_8h_source.html" title="help.h" alt="" coords="1821,80,1877,107"/><area shape="rect" id="node42" href="network_8h_source.html" title="network.h" alt="" coords="1902,80,1980,107"/><area shape="rect" id="node46" href="create__database_8h_source.html" title="create_database.h" alt="" coords="1383,80,1512,107"/></map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:a3c04138a5bfe5d72780bb7e82a18e627"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="creuvuxd_8c.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a> (int argc, char **argv)</td></tr>
+<tr class="memdesc:a3c04138a5bfe5d72780bb7e82a18e627"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction principale.  <a href="#a3c04138a5bfe5d72780bb7e82a18e627">Plus de détails...</a><br/></td></tr>
+<tr class="separator:a3c04138a5bfe5d72780bb7e82a18e627"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a4dd19b7d2f1d9097a32e6e523087a598"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4dd19b7d2f1d9097a32e6e523087a598"></a>
+<a class="el" href="struct_server_options.html">ServerOptions</a>&#160;</td><td class="memItemRight" valign="bottom"><b>options</b></td></tr>
+<tr class="separator:a4dd19b7d2f1d9097a32e6e523087a598"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<div class="textblock"><p>Fichier principale. </p>
+<dl class="section author"><dt>Auteur</dt><dd>Sylvain Bourdou </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>0.81 </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>25 Février 2013</dd></dl>
+<p>Création d'un serveur </p>
+</div><h2 class="groupheader">Documentation des fonctions</h2>
+<a class="anchor" id="a3c04138a5bfe5d72780bb7e82a18e627"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int main </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>argc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char **&#160;</td>
+          <td class="paramname"><em>argv</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction principale. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">argv</td><td>Argument passés en ligne de commande </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>-1 en cas d'erreur, et 0 si tout va bien. </dd></dl>
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="creuvuxd_8c_a3c04138a5bfe5d72780bb7e82a18e627_cgraph.png" border="0" usemap="#creuvuxd_8c_a3c04138a5bfe5d72780bb7e82a18e627_cgraph" alt=""/></div>
+<map name="creuvuxd_8c_a3c04138a5bfe5d72780bb7e82a18e627_cgraph" id="creuvuxd_8c_a3c04138a5bfe5d72780bb7e82a18e627_cgraph">
+<area shape="rect" id="node3" href="creuvard_8c.html#a01e9338ce13c961896c2fc3f944899c7" title="Ferme les descripteur de fichier." alt="" coords="121,5,249,32"/><area shape="rect" id="node5" href="server__conf_8c.html#ab7c4ca9e8fb899188488d87cbe8691ea" title="Initialise les options du serveur." alt="" coords="105,56,266,83"/><area shape="rect" id="node7" href="creuvard_8c.html#abbcce344897d42c37a326eae7476a89a" title="Chroot le processus et donne les droits du processus." alt="" coords="117,107,253,133"/><area shape="rect" id="node9" href="creuvard_8c.html#acc839f13073a1ff8a27abc9efd582a62" title="Restaure les droits du processus avec les droits Root." alt="" coords="128,157,243,184"/><area shape="rect" id="node11" href="creuvard_8c.html#ae5abc2436ae618eba165f5c64d7a36ed" title="Chroot le procesus et change les permissions." alt="" coords="117,209,253,250"/></map>
+</div>
+</p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Mercredi Février 27 2013 20:48:19 pour Creuvux par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.3.1
+</small></address>
+</body>
+</html>

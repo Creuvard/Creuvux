@@ -1,0 +1,2 @@
+[ certificate_extensions ]
+basicConstraints=CA:false

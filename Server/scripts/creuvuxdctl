@@ -1,0 +1,290 @@
+#!/usr/bin/env bash
+
+CONFDIR=/etc/creuvuxd
+CERTDIR=/etc/creuvuxd/cert
+CREUVUXD=creuvuxd
+UPDATE="-i"
+MKDIR=/bin/mkdir
+CD=cd
+CRVUSER=creuvux
+CRVSHELL=/usr/bin/false
+PEMSRV=http://www.creuvux.org/archive/server.pem
+PEMROOT=http://www.creuvux.org/archive/rootcert.pem
+GRPCONF=http://www.creuvux.org/archive/group.conf
+PKI=http://www.creuvux.org/archive/creuvuxd.cnf
+OPENSSL=`which openssl`
+PEMDH1=" dhparam -check -text -5 512 -out dh512.pem"
+PEMDH2=" dhparam -check -text -5 1024 -out dh1024.pem"
+WGET=`which wget`
+
+
+
+if [ `id -u` -eq 0 ]; 
+  then
+	echo "Your are root";
+  else
+	echo "You MUST be root";
+	exit
+  fi
+
+
+ARGV="$@"
+if [ "x$ARGV" = "x" ] ; then 
+    ARGS="help"
+fi
+
+
+which ${CREUVUXD} > /dev/null 2>&1
+if [ $? -ne 0 ]; then 
+        echo "$0 $ARG: creuvuxd could not be find"
+		return 1;
+fi
+
+which wget > /dev/null 2>&1
+if [ $? -ne 0 ]; then 
+        echo "$0 $ARG: wget could not be find"
+		return 1;
+fi
+
+
+for ARG in $@ $ARGS
+do
+	case $ARG in
+    start)
+	  if ${CREUVUXD} ; then
+		echo "$0 $ARG : creuvuxd started"
+	  else
+		echo "$0 $ARG: creuvuxd could not be started"
+	  fi
+	  ;;
+
+	status)
+	  echo "Pas encore fini"
+	;;
+
+	stop)
+	  if pkill creuvuxd; then
+		echo "$0 $ARG : creuvuxd stopped"
+	  else
+		echo "$0 $ARG : creuvuxd could not be stopped"
+	  fi
+	  ;;
+	update)
+	  if ${CREUVUXD} ${UPDATE} ; then
+		echo "$0 $ARG : creuvuxd -u started"
+	  else
+		echo "$0 $ARG: creuvuxd -u could not be started"
+	  fi
+	  ;;
+
+	init)
+	  #
+	  # SHELL
+	  #
+	  grep false /etc/shells > /dev/null 2>&1
+	  if [ "$?" = "0" ] ;
+		then
+		  echo "Un faux shells semble deja exister";
+		else
+		  echo "Ajout d'un faux shel /usr/bin/false au fichier /etc/shells";
+		  echo "${CRVSHELL}" >> /etc/shells
+	  fi
+	  
+	  #
+	  # check /etc/creuvuxd
+	  #
+	  if [ -d /etc/creuvuxd ]; then
+		echo "/etc/creuvuxd existe deja"
+	  else
+		if ${MKDIR} ${CONFDIR} ; then
+		  echo "$0 $ARG : ${CONFDIR} creation is ok."
+		else
+		  echo "$0 $ARG: ${CONFDIR} creation failed"
+		  exit
+		fi
+	  fi
+
+		#
+		# check /etc/creuvuxd
+		#
+		if [ -d /etc/creuvuxd/cert ]; then
+		echo "/etc/creuvuxd existe deja"
+		else
+		if ${MKDIR} ${CERTDIR} ; then
+		echo "$0 $ARG : ${CERTDIR} creation is ok."
+		else
+		echo "$0 $ARG: ${CERTDIR} creation failed"
+		exit
+		fi
+		fi
+	  
+	  #
+	  # Create user ${USER}
+	  #
+	  grep ${CRVUSER} /etc/passwd > /dev/null 2>&1
+	  if [ "$?" = "0" ] ;
+		then
+		  echo "L'utilisateur ${CRVUSER} semble exiter";
+		else
+		  echo "Creation de /home/${CRVUSER}";
+		  if ${MKDIR} /home/${CRVUSER} ; then
+				echo "$0 $ARG : /home/${CRVUSER} creation is ok."
+			else
+				echo "$0 $ARG: /home/${CRVUSER} creation failed"
+				exit
+			fi
+			useradd -d /home/creuvux -G users -s ${CRVSHELL} ${CRVUSER}
+	  	chown -R creuvux:users /home/creuvux
+		fi
+	  
+	  #
+	  # Change directory to /etc/creuvuxd
+	  #
+	  if ${CD} ${CONFDIR} ; then
+		echo "$0 $ARG : ${CD} ${CONFDIR} change directory ok."
+	  else
+		echo "$0 $ARG: ${CD} ${CONFDIR} change directory failed"
+		exit
+	  fi
+		
+
+	  #
+	  # Get PEM files
+	  #
+	  if ${WGET} ${PEMSRV} ; then
+		echo "$0 $ARG : wget ${PEMSRV} done"
+	  else
+		echo "$0 $ARG: wget ${PEMSRV} failed."
+	  fi
+
+	  if ${WGET} ${PEMROOT} ; then
+		echo "$0 $ARG : ${PEMROOT} Done"
+	  else
+		echo "$0 $ARG: fetch ${PEMROOT} failed"
+	  fi
+
+	  if ${OPENSSL} ${PEMDH1} ; then
+		echo "$0 $ARG : dh512.pem gen done."
+	  else
+		echo "$0 $ARG: dh512.pem gen failed."
+	  fi
+
+	  if ${OPENSSL} ${PEMDH2} ; then
+		echo "$0 $ARG : dh1024.pem gen done."
+	  else
+		echo "$0 $ARG: dh1024.pem gen failed."
+	  fi
+
+	  if ${WGET} ${GRPCONF} ; then
+		echo "$0 $ARG : wget ${GRPCONF} done."
+	  else
+		echo "$0 $ARG: wget ${GRPCONF} failed."
+	  fi
+
+		
+		#
+		# Change directory to /etc/creuvuxd/cert
+		#
+		if ${CD} ${CERTDIR} ; then
+		echo "$0 $ARG : ${CD} ${CERTDIR} change directory ok."
+		else
+		echo "$0 $ARG: ${CD} ${CERTDIR} change directory failed"
+		exit
+		fi
+
+		#
+		# Get creuvuxd.cnf files
+		#
+		if ${WGET} ${PKI} ; then
+		echo "$0 $ARG : wget ${PKI} done"
+		else
+		echo "$0 $ARG: wget ${PKI} failed."
+		fi
+		
+		if ${WGET} ${PEMROOT} ; then
+		echo "$0 $ARG : ${PEMROOT} Done"
+		else
+		echo "$0 $ARG: fetch ${PEMROOT} failed"
+		fi
+
+		#
+	  # check /home/${CRVUSER}/about
+	  #
+	  if [ -d /home/${CRVUSER}/about ]; then
+		echo "/home/${CRVUSER}/about existe deja"
+	  else
+		if ${MKDIR} /home/${CRVUSER}/about ; then
+		  echo "$0 $ARG : /home/${CRVUSER}/about creation is ok."
+		else
+		  echo "$0 $ARG: /home/${CRVUSER}/about creation failed"
+		  exit
+		fi
+	  fi
+
+		#
+		# Change directory to /etc/creuvuxd
+		#
+		if ${CD} ${CONFDIR} ; then
+		echo "$0 $ARG : ${CD} ${CONFDIR} change directory ok."
+		else
+		echo "$0 $ARG: ${CD} ${CONFDIR} change directory failed"
+		exit
+		fi
+
+	  cat > creuvuxd.conf << EOF
+CREUVUX_PATH="/etc/creuvuxd"
+CREUVUX_USER="${CRVUSER}"
+CREUVUX_CHROOT="/home/${CRVUSER}"
+CREUVUX_HOST="127.0.0.1"
+CREUVUX_ADDR="127.0.0.1"
+CREUVUX_PWD="serveurtest"
+CREUVUX_DEBUG="yes"
+
+# Bandwidth in Kbits/s
+CREUVUX_DEBIT="90"
+CREUVUX_UPDIR="/"
+CREUVUX_PUBLIC="/"
+CREUVUX_PID="/var/run/creuvuxd.pid"
+
+# Max Size in Mo
+CREUVUX_MAX_SIZE="1024"
+
+# Min Size in Ko
+CREUVUX_MIN_SIZE="400"
+EOF
+  
+	  if ${CD} /home/${CRVUSER} ; then
+		echo "$0 $ARG : ${CD} ${CRVUSER} change directory ok."
+	  else
+		echo "$0 $ARG: ${CD} ${CRVUSER} change directory failed"
+		exit
+	  fi
+	  cat > "Bienvenue sur `hostname`.txt" << EOF
+Merci d'avoir choisi Creuvuxd pour faire voyager vos fichiers.
+
+Cordialement,
+L'equipe Creuvux.
+EOF
+  chown -R creuvux:users /home/creuvux
+
+	;;
+	
+	help)
+	  BNAME=`basename $0`
+	  echo "usage: $BNAME [ init | start | status | stop | update | help | "
+	  cat <<EOF
+init       - Cree l'environement pour le demon creuvuxd.
+start      - Demare le demon creuvuxd.
+status     - Regarde si le demon est en fonctionnement.
+stop	     - Stop le demon creuvuxd.
+update     - Genere le listing des fichiers partages.
+help       - Cet page.
+
+EOF
+    ;;
+
+    esac
+
+done
+
+exit

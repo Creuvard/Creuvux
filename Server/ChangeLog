@@ -1,0 +1,49 @@
++--------------+
+| Version 0.81 |
++--------------+
+
+
+
++------+
+| BUGS |
++------+
+[ ] Le Fichier /var/run/creuvux.pid ne s'efface pas lors d'un KILL
+
+
+
+
++------+ 
+| TODO |
++------+
+-> Créer la fonction pour la mise à jour de la BD (Tous les fichiers présents
+dans le fichier upload doivent être déplacé dans le répertoire -le creer si
+besoin- qui correspont à sa catégorie).
+-> Mettre en place l'update de la BD de mannière à ce qu'elle conserve les
+commentaires.
+-> Mettre en place un système de maillist/message prive/Taches
+-> Changer/Rajouter les arguments (creuvuxd -arg) 
+-> Faire Des Thumbnails de certains fichiers (pdf, jpeg, ...). Utilisation de
+CAIRO
+-> Capacité à gérer les blobs.
+-> Faire attention lors de l'update de la DB au fait que le fichier listé soit
+contenu dans le répertoire options.upload_directory. Si il est contenue
+dedans: 
+	|-> Récupérer sa catégorie.
+	|-> Chercher dans les Path (de la table Files) si il y a un répertoire du
+	|	même nom que la catégorie.
+	|-> Si OUI
+	|	`-> On déplace le fichier dans le répertoire
+	`-> Si NON
+		`-> On ne fait rien (éventuellement on affiche la catégorie
+			orpheline).
+
++--------+
+| RAPPEL |
++--------+
+Affichage page man:
+-> groff -man -Tascii <fichier>
+-> man2html -title '<manpage_title>' < <ascii_output_file> > <html_file>
+
+
+Ajouter un utilisateur à la BD à la main.
+sqlite>INSERT into Grp_User (groupname, username) VALUES ('all', 'creuvard');

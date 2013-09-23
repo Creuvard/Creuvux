@@ -1,0 +1,92 @@
+.TH CREUVUXD.CONF 5 "November 02, 2010" "creuvuxd-0.81" "Creuvux (Daemon) Manual" 
+.SH NAME
+creuvuxd.conf - Configuration file for creuvux server
+.SH DESCRIPTION
+creuvuxd.conf contains a list of creuvux variable assignements that is read at creuvuxd startup.
+.SS Options:
+.TP
+.B CREUVUX_USER
+client is mapped to the user specified.
+
+Default: 
+.B CREUVUX_USER="creuvux"
+.TP
+.B CREUVUX_CHROOT
+Client is chrooted in this jail directory.
+.TP
+.B CREUVUX_PATH
+directory where files server.pem, rootcert.pem and groups.xml must be.
+
+Default: 
+.B CREUVUX_PATH="/etc/creuvux/"
+.TP
+.B CREUVUX_ADDR
+Assign an address to listen.
+Example:
+.B CREUVUX_ADDR="192.168.1.1"
+.TP
+.B CREUVUX_HOST
+Assign an hostname. Creuvux clients connect to CREUVUX_HOST.
+Example:
+.B CREUVUX_HOST="creuvux.org"
+.TP
+.B CREUVUX_PORT
+Assign a port to listen
+
+Default: 
+.B CREUVUX_PORT="1664"
+.TP
+.B CREUVUX_DEBIT
+Bandwidth allowed by server (in Ko/s).
+
+Default:
+.B CREUVUX_DEBUG="300"
+
+.B CREUVUX_DEBUG
+Run with on debug mode (yes or no)
+
+Default: 
+.B CREUVUX_DEBUG="yes"
+.TP
+.B CREUVUX_PID
+Name of pid file.
+.TP
+.B CREUVUX_SEC
+Security level (yes or no)
+
+Default: 
+.B CREUVUX_SEC="no"
+.TP
+.B CREUVUX_PWD
+Certificat passphrase.
+
+
+
+
+.TP
+.B CREUVUX_UPDIR
+Directory where is upload file(s). CREUVUX_UPDIR is in chroot jail.
+
+Ex: If real path is 
+.I /media/updir 
+and CREUVUX_CHROOT  
+.I /media
+, CREUVUX_PATH must be 
+.I "/updir"
+
+Default: 
+.B CREUVUX_UPDIR="/"
+.TP
+.B CREUVUX_PUBLIC
+In this directory all files are read by users of group which name is "all" [see group.conf(5)].
+
+Default: 
+.B CREUVUX_PUBLIC="/"
+.TP
+.B CREUVUX_IPV
+Version of ip protocol (4|6).
+
+Default: 
+.B CREUVUX_IPV="4"
+.SH SEE ALSO
+creuvuxd(8), group.conf(5) 

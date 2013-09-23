@@ -1,0 +1,106 @@
+.TH "creuvuxd.c" 3 "Lundi Février 25 2013" "Creuvuxd" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+creuvuxd.c \- 
+.PP
+Fichier principale\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <stdlib\&.h>\fP
+.br
+\fC#include <string\&.h>\fP
+.br
+\fC#include <unistd\&.h>\fP
+.br
+\fC#include <limits\&.h>\fP
+.br
+\fC#include <errno\&.h>\fP
+.br
+\fC#include <pwd\&.h>\fP
+.br
+\fC#include <fcntl\&.h>\fP
+.br
+\fC#include <termios\&.h>\fP
+.br
+\fC#include <sys/types\&.h>\fP
+.br
+\fC#include <sys/socket\&.h>\fP
+.br
+\fC#include <sys/stat\&.h>\fP
+.br
+\fC#include <sys/wait\&.h>\fP
+.br
+\fC#include <netinet/in\&.h>\fP
+.br
+\fC#include <arpa/inet\&.h>\fP
+.br
+\fC#include <sqlite3\&.h>\fP
+.br
+\fC#include 'creuvard\&.h'\fP
+.br
+\fC#include 'server_conf\&.h'\fP
+.br
+\fC#include 'help\&.h'\fP
+.br
+\fC#include 'network\&.h'\fP
+.br
+\fC#include 'create_database\&.h'\fP
+.br
+
+.SS "Fonctions"
+
+.in +1c
+.ti -1c
+.RI "int \fBmain\fP (int argc, char **argv)"
+.br
+.RI "\fIFonction principale\&. \fP"
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBServerOptions\fP \fBoptions\fP"
+.br
+.in -1c
+.SH "Description détaillée"
+.PP 
+Fichier principale\&. 
+
+\fBAuteur:\fP
+.RS 4
+Sylvain Bourdou 
+.RE
+.PP
+\fBVersion:\fP
+.RS 4
+0\&.81 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+25 Février 2013
+.RE
+.PP
+Création d'un serveur 
+.SH "Documentation des fonctions"
+.PP 
+.SS "int main (intargc, char **argv)"
+
+.PP
+Fonction principale\&. \fBParamètres:\fP
+.RS 4
+\fIargv\fP Argument passés en ligne de commande 
+.RE
+.PP
+\fBRenvoie:\fP
+.RS 4
+-1 en cas d'erreur, et 0 si tout va bien\&. 
+.RE
+.PP
+
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Creuvuxd à partir du code source\&.

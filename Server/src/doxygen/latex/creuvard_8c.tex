@@ -1,0 +1,253 @@
+\hypertarget{creuvard_8c}{\section{Référence du fichier creuvard.\-c}
+\label{creuvard_8c}\index{creuvard.\-c@{creuvard.\-c}}
+}
+
+
+Fonction interne.  
+
+
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include $<$string.\-h$>$}\\*
+{\ttfamily \#include $<$unistd.\-h$>$}\\*
+{\ttfamily \#include $<$errno.\-h$>$}\\*
+{\ttfamily \#include $<$fcntl.\-h$>$}\\*
+{\ttfamily \#include $<$pwd.\-h$>$}\\*
+{\ttfamily \#include $<$sys/types.\-h$>$}\\*
+{\ttfamily \#include $<$sys/stat.\-h$>$}\\*
+{\ttfamily \#include $<$sys/socket.\-h$>$}\\*
+{\ttfamily \#include $<$netinet/in.\-h$>$}\\*
+{\ttfamily \#include $<$arpa/inet.\-h$>$}\\*
+{\ttfamily \#include $<$sys/time.\-h$>$}\\*
+{\ttfamily \#include $<$sys/wait.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}creuvard.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$openssl/sha.\-h$>$}\\*
+Graphe des dépendances par inclusion de creuvard.\-c\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{creuvard_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{creuvard_8c_aa8f0efe0d1ee33354f41f8898d0ee8dd}{\#define {\bfseries debug}()~fprintf(stderr, \char`\"{}D\-E\-B\-U\-G\-: fonction\-:\%s() file\-:\%s line\-:\%d\textbackslash{}n\char`\"{}, \-\_\-\-\_\-\-F\-U\-N\-C\-T\-I\-O\-N\-\_\-\-\_\-, \-\_\-\-\_\-\-F\-I\-L\-E\-\_\-\-\_\-, \-\_\-\-\_\-\-L\-I\-N\-E\-\_\-\-\_\-);}\label{creuvard_8c_aa8f0efe0d1ee33354f41f8898d0ee8dd}
+
+\item 
+\hypertarget{creuvard_8c_aeca034f67218340ecb2261a22c2f3dcd}{\#define {\bfseries B\-U\-F\-S\-I\-Z\-E}~1024$\ast$16}\label{creuvard_8c_aeca034f67218340ecb2261a22c2f3dcd}
+
+\end{DoxyCompactItemize}
+\subsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{creuvard_8c_ac07d581dad1fcfa80baed0549ff86f6b}{char $\ast$ {\bfseries crv\-\_\-strdup} (const char $\ast$s)}\label{creuvard_8c_ac07d581dad1fcfa80baed0549ff86f6b}
+
+\item 
+\hypertarget{creuvard_8c_a1dfcf3da98992b56a1394e53ca8b3a5e}{void $\ast$ {\bfseries crv\-\_\-malloc} (size\-\_\-t size)}\label{creuvard_8c_a1dfcf3da98992b56a1394e53ca8b3a5e}
+
+\item 
+\hypertarget{creuvard_8c_add77ca000bcc081987558dd3e2c1df46}{void {\bfseries crv\-\_\-free} (void $\ast$ptr)}\label{creuvard_8c_add77ca000bcc081987558dd3e2c1df46}
+
+\item 
+\hypertarget{creuvard_8c_addf9cca7a0d664742f7daecf7b0e0738}{void $\ast$ {\bfseries crv\-\_\-calloc} (size\-\_\-t nmemb, size\-\_\-t size)}\label{creuvard_8c_addf9cca7a0d664742f7daecf7b0e0738}
+
+\item 
+void \hyperlink{creuvard_8c_a01e9338ce13c961896c2fc3f944899c7}{crv\-\_\-sanitise\-\_\-stdfd} (void)
+\begin{DoxyCompactList}\small\item\em Ferme les descripteur de fichier. \end{DoxyCompactList}\item 
+\hypertarget{creuvard_8c_a4b03e6e7431ee50171443fa86973c0cf}{F\-I\-L\-E $\ast$ {\bfseries crv\-\_\-fopen} (const char $\ast$file, const char $\ast$mode)}\label{creuvard_8c_a4b03e6e7431ee50171443fa86973c0cf}
+
+\item 
+\hypertarget{creuvard_8c_ac005199637dda040e2ac0b15dec07138}{char $\ast$$\ast$ {\bfseries crv\-\_\-cut} (const char $\ast$str, const char $\ast$separator)}\label{creuvard_8c_ac005199637dda040e2ac0b15dec07138}
+
+\item 
+\hypertarget{creuvard_8c_ad5d8198dcbaa2d875bb70cb0e78c0665}{int {\bfseries crv\-\_\-chdir} (const char $\ast$path)}\label{creuvard_8c_ad5d8198dcbaa2d875bb70cb0e78c0665}
+
+\item 
+int \hyperlink{creuvard_8c_abbcce344897d42c37a326eae7476a89a}{crv\-\_\-drop\-\_\-priv\-\_\-temp} (const char $\ast$username)
+\begin{DoxyCompactList}\small\item\em Chroot le processus et donne les droits du processus. \end{DoxyCompactList}\item 
+int \hyperlink{creuvard_8c_acc839f13073a1ff8a27abc9efd582a62}{crv\-\_\-restore\-\_\-priv} (void)
+\begin{DoxyCompactList}\small\item\em Restaure les droits du processus avec les droits Root. \end{DoxyCompactList}\item 
+\hypertarget{creuvard_8c_aa3b79f5eb9df8f74a9e858a6af48af55}{off\-\_\-t {\bfseries crv\-\_\-filesize} (const char $\ast$file)}\label{creuvard_8c_aa3b79f5eb9df8f74a9e858a6af48af55}
+
+\item 
+\hypertarget{creuvard_8c_a88ce21dfcd2abe92091f572f8d6c9a3f}{char $\ast$ {\bfseries crv\-\_\-file\-\_\-type} (const char $\ast$file)}\label{creuvard_8c_a88ce21dfcd2abe92091f572f8d6c9a3f}
+
+\item 
+\hypertarget{creuvard_8c_a95def4e27c80a6d72e3c0db1ecf55fd5}{int {\bfseries crv\-\_\-server\-\_\-listen} (int port, int nb\-\_\-pers, const char $\ast$addr, int addr\-\_\-family, int block)}\label{creuvard_8c_a95def4e27c80a6d72e3c0db1ecf55fd5}
+
+\item 
+\hypertarget{creuvard_8c_a773cf27549152fadfe4ac3ce25b2537b}{int {\bfseries crv\-\_\-set\-\_\-nonblock} (int fd)}\label{creuvard_8c_a773cf27549152fadfe4ac3ce25b2537b}
+
+\item 
+\hypertarget{creuvard_8c_a72ab0a9e7d1bacdd70e1062e75835a77}{int {\bfseries crv\-\_\-unset\-\_\-nonblock} (int fd)}\label{creuvard_8c_a72ab0a9e7d1bacdd70e1062e75835a77}
+
+\item 
+\hypertarget{creuvard_8c_af6f5886f52b1b6141e1a8545f65f14a2}{void {\bfseries crv\-\_\-daemon\-\_\-mode} (void)}\label{creuvard_8c_af6f5886f52b1b6141e1a8545f65f14a2}
+
+\item 
+\hypertarget{creuvard_8c_a0922ce5aebffd694cc7695d575a47d9f}{void {\bfseries crv\-\_\-sigchld\-\_\-handler} (int sig)}\label{creuvard_8c_a0922ce5aebffd694cc7695d575a47d9f}
+
+\item 
+\hypertarget{creuvard_8c_aa461df94e3958fd381596465d83fd790}{int {\bfseries crv\-\_\-chroot} (const char $\ast$directory)}\label{creuvard_8c_aa461df94e3958fd381596465d83fd790}
+
+\item 
+int \hyperlink{creuvard_8c_ae5abc2436ae618eba165f5c64d7a36ed}{crv\-\_\-drop\-\_\-priv\-\_\-perm\-\_\-and\-\_\-chroot} (const char $\ast$username, const char $\ast$directory)
+\begin{DoxyCompactList}\small\item\em Chroot le procesus et change les permissions. \end{DoxyCompactList}\item 
+\hypertarget{creuvard_8c_ad055a416845e0d653e8210b1b7934339}{size\-\_\-t {\bfseries crv\-\_\-strncpy} (char $\ast$dst, const char $\ast$src, size\-\_\-t siz)}\label{creuvard_8c_ad055a416845e0d653e8210b1b7934339}
+
+\item 
+\hypertarget{creuvard_8c_aa2a43a446ea083c713194985ee1c46a1}{size\-\_\-t {\bfseries crv\-\_\-strncat} (char $\ast$dst, const char $\ast$src, size\-\_\-t siz)}\label{creuvard_8c_aa2a43a446ea083c713194985ee1c46a1}
+
+\item 
+\hypertarget{creuvard_8c_aef5de68801c3c2bbac8b2fcd82972eb7}{off\-\_\-t {\bfseries crv\-\_\-du} (const char $\ast$file)}\label{creuvard_8c_aef5de68801c3c2bbac8b2fcd82972eb7}
+
+\item 
+\hypertarget{creuvard_8c_a0e8a276058ce74da6c72769fdc87673b}{char $\ast$ {\bfseries crv\-\_\-sha1} (const char $\ast$filename)}\label{creuvard_8c_a0e8a276058ce74da6c72769fdc87673b}
+
+\item 
+\hypertarget{creuvard_8c_a70557d2dae03678dc34f956a6a909882}{char $\ast$ {\bfseries crv\-\_\-mkstemp} (const char $\ast$prefix, const char $\ast$directory)}\label{creuvard_8c_a70557d2dae03678dc34f956a6a909882}
+
+\item 
+\hypertarget{creuvard_8c_afc499b857ede8c349d28c088ff5c902e}{int {\bfseries crv\-\_\-strncmp} (const char $\ast$s1, const char $\ast$s2)}\label{creuvard_8c_afc499b857ede8c349d28c088ff5c902e}
+
+\item 
+\hypertarget{creuvard_8c_a4c0ee6e861ac25b611a1f2d62619ec5a}{char $\ast$ {\bfseries crv\-\_\-real\-\_\-name} (const char $\ast$filename)}\label{creuvard_8c_a4c0ee6e861ac25b611a1f2d62619ec5a}
+
+\item 
+\hypertarget{creuvard_8c_add204d740cbce245703c9845dd6752a4}{char $\ast$ {\bfseries crv\-\_\-last\-\_\-dirname} (const char $\ast$path)}\label{creuvard_8c_add204d740cbce245703c9845dd6752a4}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Fonction interne. \begin{DoxyAuthor}{Auteur}
+Sylvain Bourdou 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\-81 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+25 Février 2013
+\end{DoxyDate}
+Fonction de creuvard 
+
+\subsection{Documentation des fonctions}
+\hypertarget{creuvard_8c_ae5abc2436ae618eba165f5c64d7a36ed}{\index{creuvard.\-c@{creuvard.\-c}!crv\-\_\-drop\-\_\-priv\-\_\-perm\-\_\-and\-\_\-chroot@{crv\-\_\-drop\-\_\-priv\-\_\-perm\-\_\-and\-\_\-chroot}}
+\index{crv\-\_\-drop\-\_\-priv\-\_\-perm\-\_\-and\-\_\-chroot@{crv\-\_\-drop\-\_\-priv\-\_\-perm\-\_\-and\-\_\-chroot}!creuvard.c@{creuvard.\-c}}
+\subsubsection[{crv\-\_\-drop\-\_\-priv\-\_\-perm\-\_\-and\-\_\-chroot}]{\setlength{\rightskip}{0pt plus 5cm}int crv\-\_\-drop\-\_\-priv\-\_\-perm\-\_\-and\-\_\-chroot (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{username, }
+\item[{const char $\ast$}]{directory}
+\end{DoxyParamCaption}
+)}}\label{creuvard_8c_ae5abc2436ae618eba165f5c64d7a36ed}
+
+
+Chroot le procesus et change les permissions. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em username} & Utilisateur à qui va appartenir le processus \\
+\hline
+{\em directory} & Répertoire dans lequel le processus va se chrooter \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+-\/1 si erreur, 0 si O\-K 
+\end{DoxyReturn}
+
+
+Voici le graphe des appelants de cette fonction \-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=256pt]{creuvard_8c_ae5abc2436ae618eba165f5c64d7a36ed_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{creuvard_8c_abbcce344897d42c37a326eae7476a89a}{\index{creuvard.\-c@{creuvard.\-c}!crv\-\_\-drop\-\_\-priv\-\_\-temp@{crv\-\_\-drop\-\_\-priv\-\_\-temp}}
+\index{crv\-\_\-drop\-\_\-priv\-\_\-temp@{crv\-\_\-drop\-\_\-priv\-\_\-temp}!creuvard.c@{creuvard.\-c}}
+\subsubsection[{crv\-\_\-drop\-\_\-priv\-\_\-temp}]{\setlength{\rightskip}{0pt plus 5cm}int crv\-\_\-drop\-\_\-priv\-\_\-temp (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{username}
+\end{DoxyParamCaption}
+)}}\label{creuvard_8c_abbcce344897d42c37a326eae7476a89a}
+
+
+Chroot le processus et donne les droits du processus. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em username} & Nom de l'utilisateur utilisé \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+-\/1 si erreur, 0 si O\-K 
+\end{DoxyReturn}
+
+
+Voici le graphe des appelants de cette fonction \-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=256pt]{creuvard_8c_abbcce344897d42c37a326eae7476a89a_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{creuvard_8c_acc839f13073a1ff8a27abc9efd582a62}{\index{creuvard.\-c@{creuvard.\-c}!crv\-\_\-restore\-\_\-priv@{crv\-\_\-restore\-\_\-priv}}
+\index{crv\-\_\-restore\-\_\-priv@{crv\-\_\-restore\-\_\-priv}!creuvard.c@{creuvard.\-c}}
+\subsubsection[{crv\-\_\-restore\-\_\-priv}]{\setlength{\rightskip}{0pt plus 5cm}int crv\-\_\-restore\-\_\-priv (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{creuvard_8c_acc839f13073a1ff8a27abc9efd582a62}
+
+
+Restaure les droits du processus avec les droits Root. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \textbackslash{}return} & -\/1 si erreur, 0 si O\-K \\
+\hline
+\end{DoxyParams}
+
+
+Voici le graphe des appelants de cette fonction \-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{creuvard_8c_acc839f13073a1ff8a27abc9efd582a62_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{creuvard_8c_a01e9338ce13c961896c2fc3f944899c7}{\index{creuvard.\-c@{creuvard.\-c}!crv\-\_\-sanitise\-\_\-stdfd@{crv\-\_\-sanitise\-\_\-stdfd}}
+\index{crv\-\_\-sanitise\-\_\-stdfd@{crv\-\_\-sanitise\-\_\-stdfd}!creuvard.c@{creuvard.\-c}}
+\subsubsection[{crv\-\_\-sanitise\-\_\-stdfd}]{\setlength{\rightskip}{0pt plus 5cm}void crv\-\_\-sanitise\-\_\-stdfd (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{creuvard_8c_a01e9338ce13c961896c2fc3f944899c7}
+
+
+Ferme les descripteur de fichier. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em } & \\
+\hline
+\end{DoxyParams}
+
+
+Voici le graphe des appelants de cette fonction \-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=250pt]{creuvard_8c_a01e9338ce13c961896c2fc3f944899c7_icgraph}
+\end{center}
+\end{figure}
+
+

@@ -1,0 +1,6 @@
+bin_PROGRAMS=creuvuxd 
+creuvuxd_CFLAGS= -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -O2 @SQL_CFLAGS@ @MYSQL_CFLAGS@
+#-Wchar-subscripts -Wcomment -Wformat=2 -Wimplicit-int -Wmain -Wparentheses -Wsequence-point -Wreturn-type -Wswitch -Wtrigraphs -Wuninitialized -Wunknown-pragmas -Wfloat-equal -Wundef -Wshadow -Wpointer-arith -Wbad-function-cast -Wwrite-strings -Wconversion -Wsign-compare -Waggregate-return -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wmissing-noreturn -Wformat -Wmissing-format-attribute -Wno-deprecated-declarations -Wnested-externs -Winline -Wlong-long -Wunused @SQL_CFLAGS@
+creuvuxd_LDADD=@SQL_LIBS@ -lz @MYSQL_LIBS@
+#creuvuxd_SOURCES=SSL_sendfile.c create_database.c creuvard.h crv_admin.h get.h log.h network.c put.h sync.c SSL_loadfile.c  SSL_sendfile.h  create_database.h  creuvuxd.c help.h msg.c network.h server_conf.c sync.h SSL_loadfile.h creuvard.c crv_admin.c get.c log.c msg.h put.c server_conf.h update_database.h update_database.c
+creuvuxd_SOURCES=create_database.c creuvuxd.c crv_mysql.h get.h network.c server_conf.c SSL_sendfile.c update_database.c create_database.h crv_string.c help.h network.h server_conf.h SSL_sendfile.h update_database.h creuvard.c crv_string.h log.c put.c SSL_loadfile.c sync.c creuvard.h crv_mysql.c get.c log.h put.h SSL_loadfile.h sync.h

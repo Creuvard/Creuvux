@@ -1,0 +1,7 @@
+autoscan-2.69: warning: missing AC_CHECK_FUNCS([inet_ntoa]) wanted by: 
+	src/network.c:704
+	src/network.c:740
+autoscan-2.69: warning: missing AC_CHECK_FUNCS([select]) wanted by: 
+	src/network.c:659
+autoscan-2.69: warning: missing AC_TYPE_SSIZE_T wanted by: 
+	src/network.c:379

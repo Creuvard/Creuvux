@@ -1,0 +1,3 @@
+[ certificate_extensions ]
+basicConstraints=CA:false
+subjectAltName = DNS:localhost,IP:192.168.1.10,DNS:servertest
