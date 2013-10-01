@@ -1,0 +1,271 @@
+gcreuvux-sync.o gcreuvux-sync.o: sync.c /usr/include/stdio.h \
+  /usr/include/sys/cdefs.h /usr/include/machine/cdefs.h \
+  /usr/include/sys/_types.h /usr/include/machine/_types.h \
+  /usr/include/sys/types.h /usr/include/machine/endian.h \
+  /usr/include/sys/endian.h /usr/include/sys/select.h \
+  /usr/include/sys/time.h /usr/include/time.h /usr/include/string.h \
+  /usr/include/limits.h /usr/include/sys/limits.h \
+  /usr/include/machine/internal_types.h /usr/include/machine/limits.h \
+  /usr/include/sys/syslimits.h /usr/include/stdlib.h \
+  /usr/include/unistd.h /usr/include/sys/unistd.h /usr/include/dirent.h \
+  /usr/include/sys/dirent.h /usr/include/errno.h /usr/include/sys/errno.h \
+  /usr/include/sys/stat.h /usr/include/openssl/err.h \
+  /usr/include/openssl/e_os2.h /usr/include/openssl/opensslconf.h \
+  /usr/include/openssl/ossl_typ.h /usr/include/openssl/bio.h \
+  /usr/include/stdarg.h /usr/include/openssl/crypto.h \
+  /usr/include/openssl/stack.h /usr/include/openssl/safestack.h \
+  /usr/include/openssl/opensslv.h /usr/include/openssl/symhacks.h \
+  /usr/include/openssl/lhash.h /usr/include/openssl/rand.h \
+  /usr/include/openssl/ssl.h /usr/include/openssl/comp.h \
+  /usr/include/openssl/x509.h /usr/include/openssl/buffer.h \
+  /usr/include/stddef.h /usr/include/openssl/evp.h \
+  /usr/include/openssl/objects.h /usr/include/openssl/obj_mac.h \
+  /usr/include/openssl/asn1.h /usr/include/openssl/bn.h \
+  /usr/include/openssl/ec.h /usr/include/openssl/ecdsa.h \
+  /usr/include/openssl/ecdh.h /usr/include/openssl/rsa.h \
+  /usr/include/openssl/dsa.h /usr/include/openssl/dh.h \
+  /usr/include/openssl/sha.h /usr/include/openssl/x509_vfy.h \
+  /usr/include/openssl/pkcs7.h /usr/include/openssl/pem.h \
+  /usr/include/openssl/pem2.h /usr/include/openssl/hmac.h \
+  /usr/include/openssl/kssl.h /usr/include/openssl/ssl2.h \
+  /usr/include/openssl/ssl3.h /usr/include/openssl/pq_compat.h \
+  /usr/include/openssl/tls1.h /usr/include/openssl/dtls1.h \
+  /usr/include/openssl/pqueue.h /usr/include/openssl/ssl23.h \
+  /usr/include/openssl/x509v3.h /usr/include/openssl/conf.h \
+  /usr/include/pthread.h /usr/include/sys/signal.h \
+  /usr/include/machine/signal.h /usr/include/machine/trap.h \
+  /usr/include/sys/siginfo.h /usr/include/sched.h sync.h creuvard.h \
+  client_conf.h thread.h help.h network.h xml_listing.h \
+  /usr/local/include/libxml2/libxml/tree.h \
+  /usr/local/include/libxml2/libxml/xmlversion.h \
+  /usr/local/include/libxml2/libxml/xmlexports.h \
+  /usr/local/include/libxml2/libxml/xmlstring.h \
+  /usr/local/include/libxml2/libxml/xmlregexp.h \
+  /usr/local/include/libxml2/libxml/dict.h \
+  /usr/local/include/libxml2/libxml/xmlmemory.h \
+  /usr/local/include/libxml2/libxml/threads.h \
+  /usr/local/include/libxml2/libxml/globals.h \
+  /usr/local/include/libxml2/libxml/parser.h \
+  /usr/local/include/libxml2/libxml/hash.h \
+  /usr/local/include/libxml2/libxml/valid.h \
+  /usr/local/include/libxml2/libxml/xmlerror.h \
+  /usr/local/include/libxml2/libxml/list.h \
+  /usr/local/include/libxml2/libxml/xmlautomata.h \
+  /usr/local/include/libxml2/libxml/entities.h \
+  /usr/local/include/libxml2/libxml/encoding.h /usr/local/include/iconv.h \
+  /usr/include/wchar.h /usr/local/include/libxml2/libxml/xmlIO.h \
+  /usr/local/include/libxml2/libxml/SAX.h \
+  /usr/local/include/libxml2/libxml/xlink.h \
+  /usr/local/include/libxml2/libxml/SAX2.h
+
+/usr/include/stdio.h:
+
+/usr/include/sys/cdefs.h:
+
+/usr/include/machine/cdefs.h:
+
+/usr/include/sys/_types.h:
+
+/usr/include/machine/_types.h:
+
+/usr/include/sys/types.h:
+
+/usr/include/machine/endian.h:
+
+/usr/include/sys/endian.h:
+
+/usr/include/sys/select.h:
+
+/usr/include/sys/time.h:
+
+/usr/include/time.h:
+
+/usr/include/string.h:
+
+/usr/include/limits.h:
+
+/usr/include/sys/limits.h:
+
+/usr/include/machine/internal_types.h:
+
+/usr/include/machine/limits.h:
+
+/usr/include/sys/syslimits.h:
+
+/usr/include/stdlib.h:
+
+/usr/include/unistd.h:
+
+/usr/include/sys/unistd.h:
+
+/usr/include/dirent.h:
+
+/usr/include/sys/dirent.h:
+
+/usr/include/errno.h:
+
+/usr/include/sys/errno.h:
+
+/usr/include/sys/stat.h:
+
+/usr/include/openssl/err.h:
+
+/usr/include/openssl/e_os2.h:
+
+/usr/include/openssl/opensslconf.h:
+
+/usr/include/openssl/ossl_typ.h:
+
+/usr/include/openssl/bio.h:
+
+/usr/include/stdarg.h:
+
+/usr/include/openssl/crypto.h:
+
+/usr/include/openssl/stack.h:
+
+/usr/include/openssl/safestack.h:
+
+/usr/include/openssl/opensslv.h:
+
+/usr/include/openssl/symhacks.h:
+
+/usr/include/openssl/lhash.h:
+
+/usr/include/openssl/rand.h:
+
+/usr/include/openssl/ssl.h:
+
+/usr/include/openssl/comp.h:
+
+/usr/include/openssl/x509.h:
+
+/usr/include/openssl/buffer.h:
+
+/usr/include/stddef.h:
+
+/usr/include/openssl/evp.h:
+
+/usr/include/openssl/objects.h:
+
+/usr/include/openssl/obj_mac.h:
+
+/usr/include/openssl/asn1.h:
+
+/usr/include/openssl/bn.h:
+
+/usr/include/openssl/ec.h:
+
+/usr/include/openssl/ecdsa.h:
+
+/usr/include/openssl/ecdh.h:
+
+/usr/include/openssl/rsa.h:
+
+/usr/include/openssl/dsa.h:
+
+/usr/include/openssl/dh.h:
+
+/usr/include/openssl/sha.h:
+
+/usr/include/openssl/x509_vfy.h:
+
+/usr/include/openssl/pkcs7.h:
+
+/usr/include/openssl/pem.h:
+
+/usr/include/openssl/pem2.h:
+
+/usr/include/openssl/hmac.h:
+
+/usr/include/openssl/kssl.h:
+
+/usr/include/openssl/ssl2.h:
+
+/usr/include/openssl/ssl3.h:
+
+/usr/include/openssl/pq_compat.h:
+
+/usr/include/openssl/tls1.h:
+
+/usr/include/openssl/dtls1.h:
+
+/usr/include/openssl/pqueue.h:
+
+/usr/include/openssl/ssl23.h:
+
+/usr/include/openssl/x509v3.h:
+
+/usr/include/openssl/conf.h:
+
+/usr/include/pthread.h:
+
+/usr/include/sys/signal.h:
+
+/usr/include/machine/signal.h:
+
+/usr/include/machine/trap.h:
+
+/usr/include/sys/siginfo.h:
+
+/usr/include/sched.h:
+
+sync.h:
+
+creuvard.h:
+
+client_conf.h:
+
+thread.h:
+
+help.h:
+
+network.h:
+
+xml_listing.h:
+
+/usr/local/include/libxml2/libxml/tree.h:
+
+/usr/local/include/libxml2/libxml/xmlversion.h:
+
+/usr/local/include/libxml2/libxml/xmlexports.h:
+
+/usr/local/include/libxml2/libxml/xmlstring.h:
+
+/usr/local/include/libxml2/libxml/xmlregexp.h:
+
+/usr/local/include/libxml2/libxml/dict.h:
+
+/usr/local/include/libxml2/libxml/xmlmemory.h:
+
+/usr/local/include/libxml2/libxml/threads.h:
+
+/usr/local/include/libxml2/libxml/globals.h:
+
+/usr/local/include/libxml2/libxml/parser.h:
+
+/usr/local/include/libxml2/libxml/hash.h:
+
+/usr/local/include/libxml2/libxml/valid.h:
+
+/usr/local/include/libxml2/libxml/xmlerror.h:
+
+/usr/local/include/libxml2/libxml/list.h:
+
+/usr/local/include/libxml2/libxml/xmlautomata.h:
+
+/usr/local/include/libxml2/libxml/entities.h:
+
+/usr/local/include/libxml2/libxml/encoding.h:
+
+/usr/local/include/iconv.h:
+
+/usr/include/wchar.h:
+
+/usr/local/include/libxml2/libxml/xmlIO.h:
+
+/usr/local/include/libxml2/libxml/SAX.h:
+
+/usr/local/include/libxml2/libxml/xlink.h:
+
+/usr/local/include/libxml2/libxml/SAX2.h:

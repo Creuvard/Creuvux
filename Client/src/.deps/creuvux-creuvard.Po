@@ -1,0 +1,108 @@
+creuvux-creuvard.o creuvux-creuvard.o: creuvard.c /usr/include/stdio.h \
+  /usr/include/sys/cdefs.h /usr/include/machine/cdefs.h \
+  /usr/include/sys/_types.h /usr/include/machine/_types.h \
+  /usr/include/sys/types.h /usr/include/machine/endian.h \
+  /usr/include/sys/endian.h /usr/include/sys/select.h \
+  /usr/include/sys/time.h /usr/include/time.h /usr/include/stdlib.h \
+  /usr/include/string.h /usr/include/unistd.h /usr/include/sys/unistd.h \
+  /usr/include/errno.h /usr/include/sys/errno.h /usr/include/fcntl.h \
+  /usr/include/pwd.h /usr/include/dirent.h /usr/include/sys/dirent.h \
+  /usr/include/netdb.h /usr/include/sys/param.h \
+  /usr/include/sys/syslimits.h /usr/include/sys/signal.h \
+  /usr/include/machine/signal.h /usr/include/machine/trap.h \
+  /usr/include/sys/siginfo.h /usr/include/sys/limits.h \
+  /usr/include/machine/internal_types.h /usr/include/machine/limits.h \
+  /usr/include/machine/param.h /usr/include/ctype.h \
+  /usr/include/sys/stat.h /usr/include/sys/socket.h \
+  /usr/include/netinet/in.h /usr/include/netinet6/in6.h \
+  /usr/include/arpa/inet.h /usr/include/sys/wait.h creuvard.h \
+  /usr/include/openssl/sha.h /usr/include/openssl/e_os2.h \
+  /usr/include/openssl/opensslconf.h /usr/include/stddef.h
+
+/usr/include/stdio.h:
+
+/usr/include/sys/cdefs.h:
+
+/usr/include/machine/cdefs.h:
+
+/usr/include/sys/_types.h:
+
+/usr/include/machine/_types.h:
+
+/usr/include/sys/types.h:
+
+/usr/include/machine/endian.h:
+
+/usr/include/sys/endian.h:
+
+/usr/include/sys/select.h:
+
+/usr/include/sys/time.h:
+
+/usr/include/time.h:
+
+/usr/include/stdlib.h:
+
+/usr/include/string.h:
+
+/usr/include/unistd.h:
+
+/usr/include/sys/unistd.h:
+
+/usr/include/errno.h:
+
+/usr/include/sys/errno.h:
+
+/usr/include/fcntl.h:
+
+/usr/include/pwd.h:
+
+/usr/include/dirent.h:
+
+/usr/include/sys/dirent.h:
+
+/usr/include/netdb.h:
+
+/usr/include/sys/param.h:
+
+/usr/include/sys/syslimits.h:
+
+/usr/include/sys/signal.h:
+
+/usr/include/machine/signal.h:
+
+/usr/include/machine/trap.h:
+
+/usr/include/sys/siginfo.h:
+
+/usr/include/sys/limits.h:
+
+/usr/include/machine/internal_types.h:
+
+/usr/include/machine/limits.h:
+
+/usr/include/machine/param.h:
+
+/usr/include/ctype.h:
+
+/usr/include/sys/stat.h:
+
+/usr/include/sys/socket.h:
+
+/usr/include/netinet/in.h:
+
+/usr/include/netinet6/in6.h:
+
+/usr/include/arpa/inet.h:
+
+/usr/include/sys/wait.h:
+
+creuvard.h:
+
+/usr/include/openssl/sha.h:
+
+/usr/include/openssl/e_os2.h:
+
+/usr/include/openssl/opensslconf.h:
+
+/usr/include/stddef.h:

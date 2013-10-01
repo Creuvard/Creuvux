@@ -1,0 +1,19 @@
+[*] On fait la fonction MAIN() afin que le code sois plus simple.
+    Que le passage entre le mode interactif et script soit le plus simple possible a maintenir.
+
+[*] Fonction SYNC
+[*] Fonction Get
+[*] Fonction INFO
+[*] Fonction FIND
+[ ] Fonction PUT (Creation d'un mini base de donnée relative au fichier envoye, avec les tables qui vont bien Files, Categories, Grp ...)
+[ ] Fonction MSG (Creation d'un mini base de donnée relative au message envoye)
+[*] Fonction HELP
+[*] Fonction GRPLS
+[*] Fonction CATLS
+[ ] Fonction CLONE (A faire en dernier)
+[ ] Fonction DIFF 
+		`-> Dans la fonction SYNC il faudrait prendre la date du dernier enregistrement de la base (avant SYNC), 
+		    faire un SYNC, et dans une tables (ex: Date) mettre de coté la date récupéré juste avant le SYNC.
+				Cela permettrait de pouvoir lister tous les fichiers plus jeunes.
+				Cela oblige a: Soit rajouter une date d'entree (nouvelle colonne) pour chaque fichier dans la table Files
+				               Soit creer une Tables special style Date (Sha1, Date), et une seconde tables Last_Update (date DD/MM/YY HH:MM)

@@ -1,0 +1,139 @@
+qlite> .schema
+CREATE TABLE Categories (Sha1 TEXT NOT NULL, Cat TEXT NOT NULL);
+CREATE TABLE Descr (Sha1 TEXT NOT NULL, Descr LONGTEXT NOT NULL, Pseudo TEXT NOT NULL, Date DATETIME DEFAULT '0000-00-00 00:00:00' NOT NULL);
+CREATE TABLE Files (Sha1 TEXT NOT NULL, Name TEXT NOT NULL, Size NUMERIC NOT NULL, Path TEXT NOT NULL, Date DATETIME DEFAULT '0000-00-00 00:00:00' NOT NULL);
+CREATE TABLE Grp_Sha1 (groupname TEXT NOT NULL, sha1 TEXT NOT NULL);
+CREATE TABLE Grp_User (groupname TEXT NOT NULL, username TEXT NOT NULL);
+sqlite>
+
++--------------------------------------------------------------------------------+
+| ( On vire toute les entrées de la DB qui se termine par les extentions *.dvi ) |
++--------------------------------------------------------------------------------+
+
+SELECT rowid,sha1 FROM Files WHERE Name like '%.dvi';
+
+On fait une requete imbriquée dans chaque table possedant une entrée Sha1.
+
+DELETE from Files WHERE Sha1 IN (SELECT DISTINCT Sha1 FROM Files WHERE Name like '%.pdf');
+SELECT Sha1 from Categories WHERE Sha1 IN (SELECT DISTINCT Sha1 FROM Files WHERE Name like '%.dvi');
+SELECT Sha1 from Descr WHERE Sha1 IN (SELECT DISTINCT Sha1 FROM Files WHERE Name like '%.dvi');
+SELECT Sha1 from Categories WHERE Sha1 IN (SELECT DISTINCT Sha1 FROM Files WHERE Name like '%.dvi');
+SELECT Sha1 from Grp_Sha1 WHERE Sha1 IN (SELECT DISTINCT Sha1 FROM Files WHERE Name like '%.dvi');
+
+
++-----------------------------------------------------+
+| ( Changer de Catégorie D'un ou plusieurs fichiers ) |
++-----------------------------------------------------+
+
+Exemple:
+Placer les fichiers *.png (résultant d'une archives d'iconnes) dans la catégories Icones.
+
+Selection de ces fichiers:
+SELECT Sha1 FROM Files WHERE Path like '/Media/Iconnes/%';
+UPDATE Categories SET Cat='Iconnes' WHERE Sha1 IN (SELECT Sha1 FROM Files WHERE Path like '/Media/Iconnes/%');
+
+
+
++---------------------------------------------+
+| Afficher le nombre de caractères des lignes |
++---------------------------------------------+
+SELECT rowid,Name,LENGTH(Name) FROM Files ORDER BY LENGTH(Name) asc;
+
++---------------------------------------------------------+
+| Afficher la taille total partagée sur la base de donnée |
++---------------------------------------------------------+
+- En Go
+
+SELECT SUM(Size)/(1024*1024*1024) FROM Files;
+
++----------------------------------------------------------------------------------+
+| Afficher la taille total partagée sur la base de donnée dans la categories voulue|
++----------------------------------------------------------------------------------+
+- En Mo
+
+SELECT SUM(Size)/(1024*1024) From Files WHERE Sha1 IN (SELECT Sha1 FROM Categories WHERE Cat like '[Photos] Grotte Fondoubine');
+
+
+
+
+
+
+
+
+
++---------------------------+
+| Executer un script SQLite |
++---------------------------+
+Le but est de simplifier la manipulation de la base de donnée.
+Pour par exemple enlever de la base tous les fichiers dont la taille est inférieur à 1Mo ou encore changer de catégorie tous les fichier contenue dans une certaine catégorie, ou encore effacer tous les format de fichiers pas interessant ( *.o, *.aux, *.log ...)
+
+sqlite.exe baselivre.db
+>.READ baselivre.sql
+
+
+-- ============================================================================
+-- Changement de categorie des fichiers contenue dans certain repertoire
+-- ============================================================================ 
+UPDATE Categories SET Cat='[Creuvux] Serveur' WHERE Sha1 IN (SELECT Sha1 FROM Files WHERE Path like '%SVN-CREUVUX/Server-SQLite%');
+UPDATE Categories SET Cat='[Creuvux] Client' WHERE Sha1 IN (SELECT Sha1 FROM Files WHERE Path like '%SVN-CREUVUX/Client-SQLite%');
+UPDATE Categories SET Cat='Iconnes' WHERE Sha1 IN (SELECT Sha1 FROM Files WHERE Path like '/Media/Iconnes/%');
+
+-- ==============================================
+-- Effacer des fichiers dont l'extention est ..
+-- ==============================================
+
+-- ====
+-- DVI
+-- ====
+DELETE from Files WHERE Sha1 IN (SELECT DISTINCT Sha1 FROM Files WHERE Name like '%.dvi');
+DELETE from Categories WHERE Sha1 IN (SELECT DISTINCT Sha1 FROM Files WHERE Name like '%.dvi');
+DELETE from Descr WHERE Sha1 IN (SELECT DISTINCT Sha1 FROM Files WHERE Name like '%.dvi');
+DELETE from Categories WHERE Sha1 IN (SELECT DISTINCT Sha1 FROM Files WHERE Name like '%.dvi');
+DELETE from Grp_Sha1 WHERE Sha1 IN (SELECT DISTINCT Sha1 FROM Files WHERE Name like '%.dvi');
+
+-- ====
+-- AUX
+-- ====
+DELETE from Files WHERE Sha1 IN (SELECT DISTINCT Sha1 FROM Files WHERE Name like '%.aux');
+DELETE from Categories WHERE Sha1 IN (SELECT DISTINCT Sha1 FROM Files WHERE Name like '%.aux');
+DELETE from Descr WHERE Sha1 IN (SELECT DISTINCT Sha1 FROM Files WHERE Name like '%.aux');
+DELETE from Categories WHERE Sha1 IN (SELECT DISTINCT Sha1 FROM Files WHERE Name like '%.aux');
+DELETE from Grp_Sha1 WHERE Sha1 IN (SELECT DISTINCT Sha1 FROM Files WHERE Name like '%.aux');
+
+-- ====
+-- LOG
+-- ====
+DELETE from Files WHERE Sha1 IN (SELECT DISTINCT Sha1 FROM Files WHERE Name like '%.log');
+DELETE from Categories WHERE Sha1 IN (SELECT DISTINCT Sha1 FROM Files WHERE Name like '%.log');
+DELETE from Descr WHERE Sha1 IN (SELECT DISTINCT Sha1 FROM Files WHERE Name like '%.log');
+DELETE from Categories WHERE Sha1 IN (SELECT DISTINCT Sha1 FROM Files WHERE Name like '%.log');
+DELETE from Grp_Sha1 WHERE Sha1 IN (SELECT DISTINCT Sha1 FROM Files WHERE Name like '%.log');
+
+-- ====
+-- OUT
+-- ====
+DELETE from Files WHERE Sha1 IN (SELECT DISTINCT Sha1 FROM Files WHERE Name like '%.out');
+DELETE from Categories WHERE Sha1 IN (SELECT DISTINCT Sha1 FROM Files WHERE Name like '%.out');
+DELETE from Descr WHERE Sha1 IN (SELECT DISTINCT Sha1 FROM Files WHERE Name like '%.out');
+DELETE from Categories WHERE Sha1 IN (SELECT DISTINCT Sha1 FROM Files WHERE Name like '%.out');
+DELETE from Grp_Sha1 WHERE Sha1 IN (SELECT DISTINCT Sha1 FROM Files WHERE Name like '%.out');
+
+-- ====
+-- TMP
+-- ====
+DELETE from Files WHERE Sha1 IN (SELECT DISTINCT Sha1 FROM Files WHERE Name like '%.tmp');
+DELETE from Categories WHERE Sha1 IN (SELECT DISTINCT Sha1 FROM Files WHERE Name like '%.tmp');
+DELETE from Descr WHERE Sha1 IN (SELECT DISTINCT Sha1 FROM Files WHERE Name like '%.tmp');
+DELETE from Categories WHERE Sha1 IN (SELECT DISTINCT Sha1 FROM Files WHERE Name like '%.tmp');
+DELETE from Grp_Sha1 WHERE Sha1 IN (SELECT DISTINCT Sha1 FROM Files WHERE Name like '%.tmp');
+
+-- ====
+-- TOC
+-- ====
+DELETE from Files WHERE Sha1 IN (SELECT DISTINCT Sha1 FROM Files WHERE Name like '%.toc');
+DELETE from Categories WHERE Sha1 IN (SELECT DISTINCT Sha1 FROM Files WHERE Name like '%.toc');
+DELETE from Descr WHERE Sha1 IN (SELECT DISTINCT Sha1 FROM Files WHERE Name like '%.toc');
+DELETE from Categories WHERE Sha1 IN (SELECT DISTINCT Sha1 FROM Files WHERE Name like '%.toc');
+DELETE from Grp_Sha1 WHERE Sha1 IN (SELECT DISTINCT Sha1 FROM Files WHERE Name like '%.toc');
+
+

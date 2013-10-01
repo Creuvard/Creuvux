@@ -1,0 +1,9 @@
+[Creuvux 0.70 (8 Fevrier 2010)]
+	* Ajout de la fonction Diff qui affiche les nouveaux fichiers disponible
+	depuis la derniere synchronisation.
+[Creuvux 0.70 (6 Fevrier 2010)]
+	* Compression activee. Soit le niveau de compression est a 9 soit il est a
+	zero (Zlib).
+
+
+

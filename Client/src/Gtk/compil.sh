@@ -1,0 +1,7 @@
+#!/usr/local/bin/bash
+
+gcc -o gcreuvux -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -O2 `pkg-config --libs glib-2.0` `pkg-config --cflags glib-2.0` `pkg-config --cflags sqlite3` `pkg-config --libs sqlite3` -lssl -lcrypto -pthread -lz `pkg-config --cflags gtk+-2.0` `pkg-config --libs gtk+-2.0` Gtk_gui.h Gtk_gui.c client_conf.c  client_conf.h  creuvard.c  creuvard.h  gcreuvux.c sync.c sync.h network.c network.h thread.h help.c help.h SSL_sendfile.c SSL_sendfile.h msg.c msg.h get.c get.h
+
+#gcc -o gcreuvux -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -Wchar-subscripts -Wcomment -Wformat=2 -Wimplicit-int -Wmain -Wparentheses -Wsequence-point -Wreturn-type -Wswitch -Wtrigraphs -Wuninitialized -Wunknown-pragmas -Wfloat-equal -Wundef -Wshadow -Wpointer-arith -Wbad-function-cast -Wwrite-strings -Wconversion -Wsign-compare -Waggregate-return -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wmissing-noreturn -Wformat -Wmissing-format-attribute -Wno-deprecated-declarations -Wpacked -Wnested-externs -Winline -Wlong-long -Wunused `pkg-config --libs glib-2.0` `pkg-config --cflags glib-2.0` `pkg-config --cflags sqlite3` `pkg-config --libs sqlite3` -lssl -lcrypto -pthread -lz `pkg-config --cflags gtk+-2.0` `pkg-config --libs gtk+-2.0` Gtk_gui.h Gtk_gui.c client_conf.c  client_conf.h  creuvard.c  creuvard.h  gcreuvux.c sync.c sync.h network.c network.h thread.h help.c help.h SSL_sendfile.c SSL_sendfile.h msg.c msg.h
+
+

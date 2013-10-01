@@ -1,0 +1,129 @@
+#!/usr/bin/env bash
+
+# Definition couleur
+
+VERT="\\033[1;32m"
+NORMAL="\\033[0;39m"
+ROUGE="\\033[1;31m"
+ROSE="\\033[1;35m"
+BLEU="\\033[1;34m"
+BLANC="\\033[0;02m"
+BLANCLAIR="\\033[1;08m"
+JAUNE="\\033[1;33m"
+CYAN="\\033[1;36m"
+VIOLET="\\033[0;35m"
+BAD=0
+
+
+function back {
+	INP=`echo $1 | tr 'a-z' 'A-Z'`
+	TST=`echo $2 | tr 'a-z' 'A-Z'`
+	VAR=${INP%%$TST*}
+	if [ "$VAR" = "$INP" ]; then echo 0; else echo 1; fi
+}
+
+
+echo "##################"
+echo "# Creuvux config #"
+echo "##################"
+
+
+
+echo -e "$ROUGE" "Check creuvux binary..." "$NORMAL"
+which creuvux > /dev/null 2>&1
+
+if [ $? -ne 0 ]; then 
+	BAD=1;
+	echo -e "Creuvux ne semble pas etre installé"  "$VERT" "\t\t\t[" "$ROUGE" "!" "$VERT" "]" "$NORMAL";
+	return 1;
+fi
+
+
+echo -e "$ROUGE" "Check wget binary..." "$NORMAL"
+which wget > /dev/null 2>&1
+if [ $? -ne 0 ]; then
+    BAD=1;
+	echo -e "Wget ne semble pas etre installé"  "$VERT" "\t\t\t[" "$ROUGE" "!" "$VERT " "]" "$NORMAL";
+	return 1;
+fi
+
+echo -e "$ROUGE" "Check tar binary..." "$NORMAL"
+which tar > /dev/null 2>&1
+
+if [ $? -ne 0 ]; then 
+	BAD=1;
+	echo -e "tar ne semble pas etre installé"  "$VERT" "\t\t\t[" "$ROUGE" "!" "$VERT" "]" "$NORMAL";
+	return 1;
+fi
+
+echo -e "$VERT" "\t\t\t[" "$VIOLET" "OK" "$VERT" "]" "$NORMAL"
+
+echo -e "$ROUGE"
+echo    "#########################################################"
+echo    "#     .       Voulez vous que ce script construise      #"
+echo    "#    / \      l'environement de creuvux.                #"
+echo    "#   / | \     Si le repertoire ~/creuvux/ existe        #"
+echo    "#  /  |  \    il va etre effacé, son contenu sera perdu #"
+echo    "# /   o   \                                             #"
+echo    "#/_________\                                            #"
+echo    "#########################################################"
+echo -e "$NORMAL"
+echo -n "  Voulez vous continuer ? (y/n)   "
+read YN
+if [ -z $YN ]; then exit; fi
+if [ `back $YN 'n'` -eq 1 ]; then exit; fi
+
+
+if [ -d ~/creuvux/ ]; then
+	rm -rf ~/creuvux/
+fi
+
+echo -e "$VERT" "Construction de l'environement" "$NORMAL"
+
+mkdir -p ~/creuvux/{tmp,listing,incoming,cert,Gtk_info}
+
+echo -e "$VERT" "Télechargement des fichiers necessaires au bon fonctionement" "$NORMAL"
+
+cd ~/creuvux/
+
+wget http://www.creuvux.org/archive/serveur_liste
+wget http://www.creuvux.org/archive/client.pem
+wget http://www.creuvux.org/archive/rootcert.pem
+
+cd ~/creuvux/cert
+wget http://www.creuvux.org/archive/creuvux.cnf
+
+cd ~/creuvux/
+echo -e "$VERT" "Construction du fichier de configuration" "$NORMAL"
+echo -e "$VERT" "..." "$NORMAL"
+
+echo "######################### " >> creuvux.conf
+echo "# Creuvux configuration # " >> creuvux.conf
+echo "######################### " >> creuvux.conf
+echo " " >> creuvux.conf
+echo "# Indique le repertoire dans lequel va se trouver " >> creuvux.conf
+echo "# les fichiers 'client.pem' 'rootcert.pem' et 'serveur_liste'" >> creuvux.conf
+echo "CREUVUX_PATH=\"`echo $HOME`/creuvux/\" " >> creuvux.conf
+echo " " >> creuvux.conf
+echo "# Indique le repertoire dans lequel sera telecharge les fichiers " >> creuvux.conf
+echo "CREUVUX_DATA=\"`echo $HOME`/creuvux/incoming/\" " >> creuvux.conf
+echo " " >> creuvux.conf
+echo "#Mot de passe (pour une utilisation sur le serveur publique, 'anonymous' ) " >> creuvux.conf
+echo "CREUVUX_PWD=\"clienttest\" " >> creuvux.conf
+echo " " >> creuvux.conf
+echo "CREUVUX_DEBUG=\"no\"" >> creuvux.conf
+echo "CREUVUX_SRV=\"creuvux.org:1664\"" >> creuvux.conf
+echo " " >> creuvux.conf
+echo "CREUVUX_COMPRESSION=\"yes\"" >> creuvux.conf
+echo "CREUVUX_GUI=\"no\" " >> creuvux.conf
+echo " " >> creuvux.conf
+echo "########### " >> creuvux.conf
+echo "# The End # " >> creuvux.conf
+echo "########### " >> creuvux.conf
+echo -e "$VERT" ".." "$NORMAL"
+echo -e "$VERT" "." "$NORMAL"
+echo -e "$NORMAL"
+creuvux -c sync
+echo -e "$VERT" "Vous pouvez maintenant lancer la commande" 
+echo "creuvux"
+echo -e "$NORMAL"

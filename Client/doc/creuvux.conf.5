@@ -1,0 +1,59 @@
+.TH CREUVUX.CONF 5 "September 27, 2008" "creuvux-0.60" "Creuvux Manual" 
+.SH NAME
+creuvux.conf - Configuration file for client creuvux
+.SH DESCRIPTION
+creuvux.conf contains a list of creuvux variable assignements that is read at creuvux startup.
+.SS Options:
+.TP
+.B CREUVUX_PATH
+directory where files rootcert.pem, client.pem must be. Path must be from root.
+
+Ex:
+.B CREUVUX_PATH="/home/user/creuvux/"
+.TP
+.B CREUVUX_DATA
+Directory where download files are move.
+
+Default:
+.B CREUVUX_DATA="/../../creuvux/incoming/"
+.TP
+.B CREUVUX_PWD
+Certificat passphrase.
+
+.TP
+.B CREUVUX_SRV
+Set favorite server. Format is "server:port"
+
+Ex:
+.B CREUVUX_SRV="colerix.org:1664"
+.TP
+.B CREUVUX_DEBUG
+Run with on debug mode (yes or no)
+
+Default: 
+.B CREUVUX_DEBUG="yes"
+
+.TP
+.B CREUVUX_GUI
+Run with HttpGUI mode (yes or no)
+
+Default: 
+.B CREUVUX_GUI="no"
+
+.TP
+.B CREUVUX_GUI_ADDR
+Client Http GUI listen on CREUVUX_GUI_ADDR.
+
+Ex:
+.B CREUVUX_PATH="127.0.0.1"
+
+.TP
+.B CREUVUX_GUI_PORT
+Client Http GUI listen on CREUVUX_GUI_PORT
+
+Ex: 
+.B CREUVUX_GUI_PORT="1664"
+
+creuvux(1) 
+
+

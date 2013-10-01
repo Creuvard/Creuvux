@@ -1,0 +1,9 @@
+
+Recherche de doublons:
+SELECT count(*),Name,Size FROM Files GROUP BY Size HAVING count(*)>1;
+
+Affichage du nom de fichiers dispo et la somme des tailles des fichiers:
+SELECT count(rowid),SUM(Size) FROM Files;
+
+Manipulation d'une image (redimensionnement avec l'API de ImageMagic)
+Insertion du résultat dans la base de donnée à l'aide de la struct BLOB.
